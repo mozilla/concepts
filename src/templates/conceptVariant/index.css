@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+  .mzp-c-navigation-container .mzp-c-button {
+    display: none;
+  }
+}

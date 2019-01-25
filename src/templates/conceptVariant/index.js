@@ -2,12 +2,15 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-import Layout from './../components/conceptComponents/layout'
-import Navigation from './../components/conceptComponents/navigation'
-import Hero from './../components/conceptComponents/hero'
-import Facets from '../components/conceptComponents/facets'
-import Callout from '../components/conceptComponents/callout'
-import Footer from './../components/conceptComponents/footer'
+import Callout from '../../components/conceptComponents/callout'
+import Facets from '../../components/conceptComponents/facets'
+import Footer from '../../components/conceptComponents/footer'
+import Hero from '../../components/conceptComponents/hero'
+import Layout from '../../components/conceptComponents/layout'
+import Navigation from '../../components/conceptComponents/navigation'
+
+// Overrides on Protocol CSS framework
+import './index.css'
 
 const ConceptVariant = ({ data }) => {
   const {
@@ -15,8 +18,9 @@ const ConceptVariant = ({ data }) => {
     metaCleanName,
     metaVariant,
     metaSurveyUrl,
+    concept,
   } = data.markdownRemark.frontmatter
-  const { hero, facets, callout } = data.markdownRemark.frontmatter.concept[0]
+  const { hero, facets, callout } = concept[0]
 
   const surveyUrl = `${metaSurveyUrl}/?concept=${metaCleanName}&variant=${metaVariant}`
 

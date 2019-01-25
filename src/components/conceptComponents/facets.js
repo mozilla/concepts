@@ -10,9 +10,11 @@ const Facets = ({ facets }) => (
         <div class={`mzp-c-billboard ${flipClass}`} style={{background: flipColor}}>
           <div class="mzp-c-billboard-image-container">
             <img
+              height="346"
+              width="346"
               class="mzp-c-billboard-image"
-              src="https://protocol.mozilla.org/static/img/billboard/billboard-image.png"
-              alt=""
+              src={facet.image.publicURL}
+              alt={facet.title}
             />
           </div>
           <div class="mzp-c-billboard-content">

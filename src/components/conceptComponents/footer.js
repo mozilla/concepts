@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Footer = () => <>
-
   <footer className="mzp-c-footer">
     <div className="mzp-l-content">
       <nav className="mzp-c-footer-secondary">
@@ -16,7 +15,6 @@ const Footer = () => <>
       </nav>
     </div>
   </footer>
-
 </>
 
 export default Footer

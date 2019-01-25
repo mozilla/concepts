@@ -14,7 +14,7 @@ const IndexPage = ({data}) => {
       <ConceptLinks {...{ edges }} />
     </div>
   )
-};
+}
 
 export default IndexPage
 

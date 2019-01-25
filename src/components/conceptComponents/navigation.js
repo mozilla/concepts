@@ -7,13 +7,6 @@ const Navigation = ({ hero, surveyUrl }) => {
       <div className="mzp-c-navigation">
         <div className="mzp-c-navigation-l-content">
           <div className="mzp-c-navigation-container">
-            <button
-              class="mzp-c-navigation-menu-button"
-              type="button"
-              aria-controls="map-c-navigation-items"
-            >
-              Menu
-            </button>
             <div class="mzp-c-navigation-logo">
               <a href="https://www.mozilla.org/">Mozilla</a>
             </div>
@@ -22,7 +15,7 @@ const Navigation = ({ hero, surveyUrl }) => {
                 <div class="mzp-c-button-download-container">
                   <a
                     href={surveyUrl}
-                    class="mzp-c-button mzp-t-download mzp-t-download mzp-t-secondary mzp-t-small"
+                    class="mzp-c-button mzp-t-download mzp-t-secondary mzp-t-small"
                   >
                     {cta}
                   </a>
