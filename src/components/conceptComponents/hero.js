@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Hero = ({ hero, surveyUrl }) => {
+import { makeHandleClickLink } from '../../lib/ga-snippet'
+
+const Hero = ({ hero, surveyUrl, metaCleanName, metaVariant }) => {
   const { title, text, cta, image } = hero[0]
   return (
     <section className="mzp-c-hero mzp-has-image mzp-t-product-firefox">
@@ -12,6 +14,7 @@ const Hero = ({ hero, surveyUrl }) => {
           </div>
           <p className="mzp-c-hero-cta">
             <a
+              onClick={makeHandleClickLink(metaCleanName, metaVariant)}
               className="mzp-c-button mzp-t-download mzp-t-firefox mzp-t-product-firefox"
               href={surveyUrl}
             >

@@ -9,6 +9,8 @@ import Hero from '../../components/conceptComponents/hero'
 import Layout from '../../components/conceptComponents/layout'
 import Navigation from '../../components/conceptComponents/navigation'
 
+import sendToGA from '../../lib/ga-snippet'
+
 // Overrides on Protocol CSS framework
 import './index.css'
 
@@ -24,16 +26,20 @@ const ConceptVariant = ({ data }) => {
 
   const surveyUrl = `${metaSurveyUrl}/?concept=${metaCleanName}&variant=${metaVariant}`
 
+  if (typeof window === 'object') {
+    sendToGA("pageview", metaCleanName, metaVariant)
+  }
+
   return (
     <>
       <Helmet>
         <title>{metaName} by Firefox</title>
       </Helmet>
       <Layout>
-        <Navigation {...{ hero, surveyUrl }} />
-        <Hero {...{ hero, surveyUrl }} />
+        <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant }} />
+        <Hero {...{ hero, surveyUrl, metaCleanName, metaVariant }} />
         <Facets {...{ facets }} />
-        <Callout {...{ callout, surveyUrl }} />
+        <Callout {...{ callout, surveyUrl, metaCleanName, metaVariant }} />
         <Footer />
       </Layout>
     </>
