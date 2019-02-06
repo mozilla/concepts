@@ -14,7 +14,7 @@ const Hero = ({ hero, surveyUrl, metaCleanName, metaVariant }) => {
           </div>
           <p className="mzp-c-hero-cta">
             <a
-              onClick={makeHandleClickLink(metaCleanName, metaVariant)}
+              onClick={makeHandleClickLink(metaCleanName, metaVariant, 'primary')}
               className="mzp-c-button mzp-t-download mzp-t-firefox mzp-t-product-firefox"
               href={surveyUrl}
             >

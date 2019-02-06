@@ -1,51 +1,55 @@
-/* global ga */
+/* global window */
 
-/* eslint-disable */
-// HACK: Google Analytics lives here, because CSP won't let it live inline
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)
-},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://ssl.google-analytics.com/analytics.js','ga');
-
-if (typeof(ga) !== 'undefined') {
-  ga('create', {
-      trackingId: 'UA-133941153-1', // TODO Replace this with the real id
-      cookieDomain: 'auto',
-      siteSpeedSampleRate: '100'
-  });
-} else {
-  console.warn( // eslint-disable-line no-console
-    'You have google analytics blocked. We understand. Take a ' +
-    'look at our privacy policy to see how we handle your data.'
-  );
+if (typeof window === 'object') {
+  window.dataLayer = window.dataLayer || [];
 }
-/* eslint-enable */
-
-export default function sendToGA(type, aid, av, dataIn) {
-  if (window.ga && ga.loaded) {
-    const data = dataIn || {}
-    const params = new URLSearchParams(window.location.search)
-
-    data.hitType = type
-    data.dimension1 = params.get('rc')
-    data.dimension2 = params.get('rv')
-    data.dimension3 = aid
-    data.dimension4 = av
-    data.dimension5 = params.get('debug')
-
-    ga("send", data)
+function gtag(){
+  if (typeof window !== 'object') {
+    return;
   }
+  window.dataLayer.push(arguments);
 }
 
-export function makeHandleClickLink(aid, av) {
+export function setupGA(metaCleanName, metaVariant) {
+  if (typeof window !== 'object') {
+    return
+  }
+
+  // Sets up ga and records the page hit
+  const params = new URLSearchParams(window.location.search)
+
+  gtag('js', new Date());
+
+  // In gtag, the config event logs the pageview.
+  gtag('config', 'UA-134031680-1', {
+    'transport_type': 'beacon',
+    'custom_map': {
+      'dimension1': 'rc',
+      'dimension2': 'rv',
+      'dimension3': 'aid',
+      'dimension4': 'av',
+      'dimension5': 'debug'
+    },
+    'rc': params.get('rc'),
+    'rv': params.get('rv'),
+    'aid': metaCleanName,
+    'av': metaVariant,
+    'debug': params.get('debug')
+  });
+}
+
+export function makeHandleClickLink(aid, av, label) {
   return (e) => {
-    sendToGA(
-      "event", aid, av, {
-        eventCategory: "Outbound Link",
-        eventAction: "click",
-        eventLabel: e.target.href,
-        transport: 'beacon'
+    const params = new URLSearchParams(window.location.search)
+    gtag(
+      "event", "click", {
+        event_category: "CTA",
+        event_label: label,
+        'rc': params.get('rc'),
+        'rv': params.get('rv'),
+        'aid': aid,
+        'av': av,
+        'debug': params.get('debug')
       })
   } 
 }

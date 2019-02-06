@@ -20,7 +20,7 @@ const Callout = ({ callout, surveyUrl, metaCleanName, metaVariant }) => {
           <div className="mzp-c-call-out-cta-container">
             <div className="mzp-c-button-download-container">
               <a
-                onClick={makeHandleClickLink(metaCleanName, metaVariant)}
+                onClick={makeHandleClickLink(metaCleanName, metaVariant, 'nav')}
                 href={surveyUrl}
                 className="mzp-c-button mzp-t-secondary mzp-t-dark"
               >

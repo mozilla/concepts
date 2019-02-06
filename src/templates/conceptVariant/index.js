@@ -9,7 +9,7 @@ import Hero from '../../components/conceptComponents/hero'
 import Layout from '../../components/conceptComponents/layout'
 import Navigation from '../../components/conceptComponents/navigation'
 
-import sendToGA from '../../lib/ga-snippet'
+import { setupGA } from '../../lib/ga-snippet'
 
 // Overrides on Protocol CSS framework
 import './index.css'
@@ -26,14 +26,13 @@ const ConceptVariant = ({ data }) => {
 
   const surveyUrl = `${metaSurveyUrl}/?concept=${metaCleanName}&variant=${metaVariant}`
 
-  if (typeof window === 'object') {
-    sendToGA("pageview", metaCleanName, metaVariant)
-  }
+  setupGA(metaCleanName, metaVariant)
 
   return (
     <>
       <Helmet>
         <title>{metaName} by Firefox</title>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134031680-1"></script>
       </Helmet>
       <Layout>
         <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant }} />
