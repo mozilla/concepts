@@ -22,7 +22,7 @@ const ConceptVariant = ({ data }) => {
     metaSurveyUrl,
     concept,
   } = data.markdownRemark.frontmatter
-  const { hero, facets, callout } = concept[0]
+  const { hero, facets, callout, cobrand } = concept[0]
 
   const surveyUrl = `${metaSurveyUrl}/?concept=${metaCleanName}&variant=${metaVariant}`
 
@@ -31,14 +31,17 @@ const ConceptVariant = ({ data }) => {
   return (
     <>
       <Helmet>
-        <title>{metaName} by Firefox</title>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134031680-1"></script>
+        {cobrand === '' ?
+          <title>{metaName} by Firefox</title> :
+          <title>Firefox + {cobrand}</title>
+        }
       </Helmet>
       <Layout>
         <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant }} />
-        <Hero {...{ hero, surveyUrl, metaCleanName, metaVariant }} />
+        <Hero {...{ hero, surveyUrl, cobrand, metaCleanName, metaVariant }} />
         <Facets {...{ facets }} />
-        <Callout {...{ callout, surveyUrl, metaCleanName, metaVariant }} />
+        <Callout {...{ callout, surveyUrl, cobrand, metaCleanName, metaVariant }} />
         <Footer />
       </Layout>
     </>
@@ -59,6 +62,7 @@ export const query = graphql`
         metaVariant
         metaSurveyUrl
         concept {
+          cobrand
           hero {
             title
             text
