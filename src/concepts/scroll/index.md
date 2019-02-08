@@ -6,6 +6,7 @@ metaSurveyUrl: "https://reddit.com"
 metaDate: "2010-10-17"
 concept:
   -
+    cobrand: "Pizza Industries"
     hero:
       -
         title: "Lorem Ipsum Dolor"

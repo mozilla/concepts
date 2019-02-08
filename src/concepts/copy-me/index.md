@@ -6,6 +6,7 @@ metaSurveyUrl: "valid url"
 metaDate: "creation date"
 concept:
   -
+    cobrand: "Partner Name"
     hero:
       -
         title: "Title"

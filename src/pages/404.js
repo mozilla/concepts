@@ -1,6 +1,6 @@
 import React from 'react'
 import PageNotFound from '../components/pageNotFound'
 
-const Index = () => <PageNotFound />
+const FourOhFour = () => <PageNotFound />
 
-export default Index
+export default FourOhFour

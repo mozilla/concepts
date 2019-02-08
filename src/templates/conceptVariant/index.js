@@ -20,20 +20,23 @@ const ConceptVariant = ({ data }) => {
     metaSurveyUrl,
     concept,
   } = data.markdownRemark.frontmatter
-  const { hero, facets, callout } = concept[0]
+  const { hero, facets, callout, cobrand } = concept[0]
 
   const surveyUrl = `${metaSurveyUrl}/?concept=${metaCleanName}&variant=${metaVariant}`
 
   return (
     <>
       <Helmet>
-        <title>{metaName} by Firefox</title>
+        {cobrand === '' ?
+          <title>{metaName} by Firefox</title> :
+          <title>Firefox + {cobrand}</title>
+        }
       </Helmet>
       <Layout>
         <Navigation {...{ hero, surveyUrl }} />
-        <Hero {...{ hero, surveyUrl }} />
+        <Hero {...{ hero, surveyUrl, cobrand }} />
         <Facets {...{ facets }} />
-        <Callout {...{ callout, surveyUrl }} />
+        <Callout {...{ callout, surveyUrl, cobrand }} />
         <Footer />
       </Layout>
     </>
@@ -54,6 +57,7 @@ export const query = graphql`
         metaVariant
         metaSurveyUrl
         concept {
+          cobrand
           hero {
             title
             text

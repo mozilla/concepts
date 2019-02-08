@@ -4,22 +4,22 @@ const Callout = ({ callout, surveyUrl }) => {
   const { title, text, cta } = callout[0]
   return (
     <section
-      class="mzp-c-call-out-compact mzp-t-product-firefox mzp-t-firefox mzp-t-dark"
+      className="mzp-c-call-out-compact mzp-t-product-firefox mzp-t-firefox mzp-t-dark"
       style={{ background: `#2a0140` }}
     >
-      <div class="mzp-l-content">
-        <div class="mzp-c-call-out-content">
-          <div class="mzp-c-call-out-container">
-            <h2 class="mzp-c-call-out-title">{title}</h2>
-            <p class="mzp-c-call-out-desc">{text}</p>
+      <div className="mzp-l-content">
+        <div className="mzp-c-call-out-content">
+          <div className="mzp-c-call-out-container">
+            <h2 className="mzp-c-call-out-title">{title}</h2>
+            <p className="mzp-c-call-out-desc">{text}</p>
           </div>
         </div>
-        <div class="mzp-c-call-out-cta">
-          <div class="mzp-c-call-out-cta-container">
-            <div class="mzp-c-button-download-container">
+        <div className="mzp-c-call-out-cta">
+          <div className="mzp-c-call-out-cta-container">
+            <div className="mzp-c-button-download-container">
               <a
                 href={surveyUrl}
-                class="mzp-c-button mzp-t-secondary mzp-t-dark "
+                className="mzp-c-button mzp-t-secondary mzp-t-dark "
               >
                 {cta}
               </a>
