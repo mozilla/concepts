@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Callout = ({ callout, surveyUrl }) => {
+import { makeHandleClickLink } from '../../lib/ga-snippet'
+
+const Callout = ({ callout, surveyUrl, metaCleanName, metaVariant }) => {
   const { title, text, cta } = callout[0]
   return (
     <section
@@ -18,8 +20,9 @@ const Callout = ({ callout, surveyUrl }) => {
           <div className="mzp-c-call-out-cta-container">
             <div className="mzp-c-button-download-container">
               <a
+                onClick={makeHandleClickLink(metaCleanName, metaVariant, 'nav')}
                 href={surveyUrl}
-                className="mzp-c-button mzp-t-secondary mzp-t-dark "
+                className="mzp-c-button mzp-t-secondary mzp-t-dark"
               >
                 {cta}
               </a>

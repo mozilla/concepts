@@ -9,6 +9,8 @@ import Hero from '../../components/conceptComponents/hero'
 import Layout from '../../components/conceptComponents/layout'
 import Navigation from '../../components/conceptComponents/navigation'
 
+import { setupGA } from '../../lib/ga-snippet'
+
 // Overrides on Protocol CSS framework
 import './index.css'
 
@@ -24,19 +26,22 @@ const ConceptVariant = ({ data }) => {
 
   const surveyUrl = `${metaSurveyUrl}/?concept=${metaCleanName}&variant=${metaVariant}`
 
+  setupGA(metaCleanName, metaVariant)
+
   return (
     <>
       <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134031680-1"></script>
         {cobrand === '' ?
           <title>{metaName} by Firefox</title> :
           <title>Firefox + {cobrand}</title>
         }
       </Helmet>
       <Layout>
-        <Navigation {...{ hero, surveyUrl }} />
-        <Hero {...{ hero, surveyUrl, cobrand }} />
+        <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant }} />
+        <Hero {...{ hero, surveyUrl, cobrand, metaCleanName, metaVariant }} />
         <Facets {...{ facets }} />
-        <Callout {...{ callout, surveyUrl, cobrand }} />
+        <Callout {...{ callout, surveyUrl, cobrand, metaCleanName, metaVariant }} />
         <Footer />
       </Layout>
     </>
