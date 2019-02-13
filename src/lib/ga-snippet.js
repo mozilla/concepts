@@ -27,7 +27,6 @@ export function setupGA(metaCleanName, metaVariant) {
 
   // In gtag, the config event logs the pageview.
   gtag('config', 'UA-77033033-22', {
-    send_page_view: false,
     transport_type: 'beacon',
     custom_map: {
       dimension1: 'rc',
@@ -35,7 +34,12 @@ export function setupGA(metaCleanName, metaVariant) {
       dimension3: 'aid',
       dimension4: 'av',
       dimension5: 'debug'
-    }
+    },
+    rc: params.get('rc'),
+    rv: params.get('rv'),
+    aid: metaCleanName,
+    av: metaVariant,
+    debug: params.get('debug')
   });
 
   gtag("event", "visit", {
