@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { makeHandleClickLink } from '../../lib/ga-snippet'
+
 const Hero = ({ hero, surveyUrl, cobrand, metaCleanName, metaVariant }) => {
   const { title, text, cta, image } = hero[0]
   console.log(cobrand);
