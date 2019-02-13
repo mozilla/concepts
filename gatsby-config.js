@@ -28,5 +28,13 @@ module.exports = {
         icon: 'src/images/firefox-logo.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: null,
+        sitemap: null,
+        policy: [{ userAgent: '*', disallow: '/' }]
+      }
+    }
   ],
 };
