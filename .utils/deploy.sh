@@ -29,8 +29,7 @@ TEN_MINUTES="600"
 # For long-lived assets; in seconds
 ONE_YEAR="31536000"
 
-CSP=$(cat - <<EOF
-"content-security-policy": "default-src 'self';
+CSP="\"content-security-policy\": \"default-src 'self';
 connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com;
 font-src 'self';
 form-action 'none';
@@ -39,8 +38,7 @@ frame-src https://www.youtube.com;
 img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com;
 object-src 'none';
 script-src 'self' https://ssl.google-analytics.com;
-style-src 'self'"
-EOF)
+style-src 'self'\""
 HSTS="\"strict-transport-security\": \"max-age=${ONE_YEAR}; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
@@ -68,7 +66,7 @@ aws s3 sync \
   --content-type "text/html" \
   --exclude "*" \
   --include "*.html" \
-  --metadata "{${CSP}, ${HSTS}, ${TYPE}, ${XSS}}" \
+  --metadata "{${CSP//$'\n'/ }, ${HSTS}, ${TYPE}, ${XSS}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
@@ -145,7 +143,7 @@ for fn in $(find ${ARTIFACTS} -name 'index.html' -not -path '${ARTIFACTS}/index.
     --content-type "text/html" \
     --exclude "*" \
     --include "*.html" \
-    --metadata "{${CSP}, ${HSTS}, ${TYPE}, ${XSS}}" \
+    --metadata "{${CSP//$'\n'/ }, ${HSTS}, ${TYPE}, ${XSS}}" \
     --metadata-directive "REPLACE" \
     --acl "public-read" \
     $fn s3://${CONCEPTS_BUCKET}/${s3path}
