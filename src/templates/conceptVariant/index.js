@@ -24,7 +24,21 @@ const ConceptVariant = ({ data }) => {
   } = data.markdownRemark.frontmatter
   const { hero, facets, callout, cobrand } = concept[0]
 
-  const surveyUrl = `${metaSurveyUrl}/?concept=${metaCleanName}&variant=${metaVariant}`
+  let params;
+  if (typeof window === 'object') {
+    params = new URLSearchParams(window.location.search)
+  } else {
+    params = {
+      get: () => ''
+    }
+  }
+  const rc = encodeURIComponent(params.get('rc'))
+  const rv = encodeURIComponent(params.get('rv'))
+  const aid = metaCleanName
+  const av = metaVariant
+  const t = typeof window === 'object' ? navigator.doNotTrack === "1" : false
+  const debug = encodeURIComponent(params.get('debug'))
+  const surveyUrl = `${metaSurveyUrl}/?rc=${rc}&rv=${rv}&aid=${aid}&av=${av}&t=${t}&debug=${debug}`
 
   setupGA(metaCleanName, metaVariant)
 
