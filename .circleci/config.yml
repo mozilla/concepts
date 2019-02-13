@@ -38,15 +38,22 @@ jobs:
           command: |
             # show env variables but not the AWS secrets!
             env | egrep -v AWS_
-            # push stage branch to -stage env
+
+            # protection so other branches not get pushed to -stage or -prod accidentally
+            if [[ "$CIRCLE_BRANCH" != "stage" && "$CIRCLE_BRANCH" != "prod" ]] ; then
+              echo "We only deploy for stage or prod branch, not $CIRCLE_BRANCH."
+              exit 1
+            fi
+
             if [ "$CIRCLE_BRANCH" == "stage" ] ; then
               export AWS_ACCESS_KEY_ID="${STAGE_AWS_ACCESS_KEY_ID}"
               export AWS_SECRET_ACCESS_KEY="${STAGE_AWS_SECRET_ACCESS_KEY}"
               export DISTRIBUTION_ID="${STAGE_DISTRIBUTION_ID}"
               export CONCEPTS_BUCKET="${STAGE_CONCEPTS_BUCKET}"
             fi
+
             ./.utils/deploy.sh
-            ./.utils/circleci/invalidate-cloudfront-cache.sh
+            ./.utils/invalidate-cloudfront-cache.sh
 
 workflows:
   version: 2
