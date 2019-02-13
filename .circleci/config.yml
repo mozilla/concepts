@@ -46,7 +46,7 @@ jobs:
               export CONCEPTS_BUCKET="${STAGE_CONCEPTS_BUCKET}"
             fi
             ./.utils/deploy.sh
-            ./.utils/circleci/invalidate-cloudfront-cache.sh
+            ./.utils/invalidate-cloudfront-cache.sh
 
 workflows:
   version: 2
