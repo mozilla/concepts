@@ -10,6 +10,20 @@ function gtag(){
   if (typeof navigator === 'object' && navigator.doNotTrack === "1") {
     return;
   }
+  //check if user has seen this experiment before:
+  const aid = JSON.stringify({a: arguments});
+  const hasSeenId = localStorage.getItem(aid);
+
+  // if they're not debugging, set a localstorage item that says they have
+  if (arguments.length === 3 && !(arguments[2].debug)) {
+    localStorage.setItem(aid, true)
+  }
+
+  // if they've seen this experiment, don't send stuff
+  if (hasSeenId) {
+    return
+  }
+
   window.dataLayer.push(arguments);
 }
 
