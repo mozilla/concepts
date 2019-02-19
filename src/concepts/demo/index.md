@@ -1,6 +1,6 @@
 ---
-metaName: "Scroll"
-metaCleanName: "scroll"
+metaName: "Demo"
+metaCleanName: "demo"
 metaVariant: "control"
 metaSurveyUrl: "https://reddit.com"
 metaDate: "2010-10-17"
