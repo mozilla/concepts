@@ -31,7 +31,6 @@ const ConceptVariant = ({ data }) => {
   return (
     <>
       <Helmet>
-        <meta name="robots" content="noindex,nofollow" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134031680-1"></script>
         {cobrand === '' ?
           <title>{metaName} by Firefox</title> :
