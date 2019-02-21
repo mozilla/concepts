@@ -38,7 +38,7 @@ frame-src https://www.youtube.com;
 img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com;
 object-src 'none';
 script-src 'self' https://ssl.google-analytics.com;
-style-src 'self'\""
+style-src 'self' 'unsafe-inline'\""
 HSTS="\"strict-transport-security\": \"max-age=${ONE_YEAR}; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
