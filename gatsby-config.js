@@ -43,6 +43,7 @@ module.exports = {
         sitemap: null,
         policy: [{ userAgent: '*', disallow: '/' }]
       }
-    }
+    },
+    'gatsby-plugin-csp'
   ],
 };
