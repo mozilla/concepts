@@ -31,6 +31,7 @@ ONE_YEAR="31536000"
 
 CSP="\"content-security-policy\": \"default-src 'self';
 connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com;
+base-uri 'self';
 font-src 'self';
 form-action 'none';
 frame-ancestors 'self';
