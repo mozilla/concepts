@@ -12,7 +12,7 @@ const Navigation = ({ hero, surveyUrl, metaCleanName, metaVariant }) => {
             <div className="mzp-c-navigation-logo">
               <a href="https://www.mozilla.org/">Mozilla</a>
             </div>
-            <div className="mzp-c-navigation-items" id="mzp-c-navigation-items">
+            <div className="mzp-c-navigation-items" id="mzp-c-navigation-items" style={{display: "none"}}>
               <div className="mzp-c-navigation-download">
                 <div className="mzp-c-button-download-container">
                   <a

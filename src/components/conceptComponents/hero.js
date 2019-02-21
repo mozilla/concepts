@@ -20,16 +20,16 @@ const Hero = ({ hero, surveyUrl, cobrand, metaCleanName, metaVariant }) => {
             </h4>
           )}
           <div className="mzp-c-hero-desc">
-            <p>{text}</p>
+            <p dangerouslySetInnerHTML={{ __html: text }} />
           </div>
           <p className="mzp-c-hero-cta">
             <a
               onClick={makeHandleClickLink(metaCleanName, metaVariant, 'primary')}
               className="mzp-c-button mzp-t-download mzp-t-firefox mzp-t-product-firefox"
               href={surveyUrl}
-            >
-              {cta}
-            </a>
+              dangerouslySetInnerHTML={{ __html: cta }}
+              style={{textAlign:'center'}}
+            />
             {console.log(cobrand)}
           </p>
         </div>
