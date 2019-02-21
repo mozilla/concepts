@@ -35,7 +35,7 @@ font-src 'self';
 form-action 'none';
 frame-ancestors 'self';
 frame-src https://www.youtube.com;
-img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com;
+img-src 'self' data: https://ssl.google-analytics.com https://www.google-analytics.com;
 object-src 'none';
 script-src 'self' https://ssl.google-analytics.com;
 style-src 'self' 'unsafe-inline'\""
