@@ -66,7 +66,7 @@ aws s3 sync \
   --content-type "text/html" \
   --exclude "*" \
   --include "*.html" \
-  --metadata "{${CSP//$'\n'/ }, ${HSTS}, ${TYPE}, ${XSS}}" \
+  --metadata "{${HSTS}, ${TYPE}, ${XSS}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
