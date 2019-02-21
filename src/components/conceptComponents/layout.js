@@ -1,7 +1,8 @@
 import React from 'react'
 
-import '@mozilla-protocol/core/protocol/css/protocol.css'
-import '@mozilla-protocol/core/protocol/css/protocol-extra.css'
+// Hack: debugging sass loading on deployment env
+// import '@mozilla-protocol/core/protocol/css/protocol.css'
+// import '@mozilla-protocol/core/protocol/css/protocol-extra.css'
 
 const Layout = ({ children }) => <>{children}</>
 
