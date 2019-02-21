@@ -23,6 +23,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: [
+          require('path').resolve(__dirname, 'node_modules')
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/firefox-logo.png', // This path is relative to the root of the site.
