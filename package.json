@@ -34,9 +34,11 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "lint:deps": "npm audit --json | audit-filter --nsp-config=.nsprc --audit=-"
   },
   "devDependencies": {
+    "audit-filter": "0.3.0",
     "prettier": "1.16.4"
   },
   "repository": {
