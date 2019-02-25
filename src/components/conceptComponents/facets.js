@@ -5,9 +5,8 @@ const Facets = ({ facets }) => (
     {facets.map((facet, index) => {
       const flipClass =
         index % 2 === 0 ? 'mzp-l-billboard-right' : 'mzp-l-billboard-left'
-      const flipColor = index % 2 === 0 ? '#ededf0' : 'white'
       return (
-        <div className={`mzp-c-billboard ${flipClass}`} key={index} style={{background: flipColor}}>
+        <div className={`mzp-c-billboard ${flipClass}`} key={index}>
           <div className="mzp-c-billboard-image-container">
             <img
               height="346"

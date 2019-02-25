@@ -11,11 +11,7 @@ const Hero = ({ hero, surveyUrl, cobrand, metaCleanName, metaVariant }) => {
         <div className="mzp-c-hero-body">
           <h1 className="mzp-c-hero-title">{title}</h1>
           {cobrand !== '' && (
-            <h4 style={{
-              margin: "-10px 0 20px",
-              fontWeight: "400",
-              fontSize: "24px",
-              fontFamily: "Open Sans, X-LocaleSpecific, sans-serif"}}>
+            <h4 class="cobrand">
               powered by <b>{cobrand}</b>
             </h4>
           )}
@@ -28,9 +24,7 @@ const Hero = ({ hero, surveyUrl, cobrand, metaCleanName, metaVariant }) => {
               className="mzp-c-button mzp-t-download mzp-t-firefox mzp-t-product-firefox"
               href={surveyUrl}
               dangerouslySetInnerHTML={{ __html: cta }}
-              style={{textAlign:'center'}}
             />
-            {console.log(cobrand)}
           </p>
         </div>
       </div>
