@@ -2,7 +2,7 @@ import React from 'react'
 
 import { makeHandleClickLink } from '../../lib/ga-snippet'
 
-const Navigation = ({ hero, surveyUrl, metaCleanName, metaVariant }) => {
+const Navigation = ({ hero, surveyUrl, metaCleanName, metaVariant, MozDark }) => {
   const { cta } = hero[0]
   return (
     <>
@@ -10,7 +10,9 @@ const Navigation = ({ hero, surveyUrl, metaCleanName, metaVariant }) => {
         <div className="mzp-c-navigation-l-content">
           <div className="mzp-c-navigation-container">
             <div className="mzp-c-navigation-logo">
-              <a href="https://www.mozilla.org/">Mozilla</a>
+              <a href="https://www.mozilla.org/">
+                <img src={MozDark} alt="mozilla" />
+              </a>
             </div>
             <div className="mzp-c-navigation-items" id="mzp-c-navigation-items">
               <div className="mzp-c-navigation-download">

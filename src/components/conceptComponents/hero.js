@@ -4,7 +4,6 @@ import { makeHandleClickLink } from '../../lib/ga-snippet'
 
 const Hero = ({ hero, surveyUrl, cobrand, metaCleanName, metaVariant }) => {
   const { title, text, cta, image } = hero[0]
-  console.log(cobrand);
   return (
     <section className="mzp-c-hero mzp-has-image mzp-t-product-firefox">
       <div className="mzp-l-content">
