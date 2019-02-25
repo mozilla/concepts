@@ -44,6 +44,15 @@ module.exports = {
         policy: [{ userAgent: '*', disallow: '/' }]
       }
     },
-    'gatsby-plugin-csp'
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        mergeDefaultDirectives: false,
+        directives: {
+          "script-src": "'self' https://tagmanager.google.com/ https://www.googletagmanager.com/",
+          "style-src": "'self' https://tagmanager.google.com/ https://fonts.googleapis.com/",
+        }
+      }
+    }
   ],
 };
