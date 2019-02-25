@@ -49,7 +49,7 @@ module.exports = {
       options: {
         mergeDefaultDirectives: false,
         directives: {
-          "script-src": "'self' https://tagmanager.google.com/ https://www.googletagmanager.com/",
+          "script-src": "'self' https://tagmanager.google.com/ https://www.googletagmanager.com/ https://www.google-analytics.com/",
           "style-src": "'self' https://tagmanager.google.com/ https://fonts.googleapis.com/",
           "img-src": "'self' data: https://ssl.gstatic.com",
           "font-src": "'self' data:",
