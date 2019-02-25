@@ -29,17 +29,17 @@ TEN_MINUTES="600"
 # For long-lived assets; in seconds
 ONE_YEAR="31536000"
 
+# script-src and style-src are defined by gatsby-plugin-csp and inserted
+# into a meta tag in each page.
 CSP="\"content-security-policy\": \"default-src 'self';
-connect-src 'self' https://sentry.prod.mozaws.net https://www.google-analytics.com https://ssl.google-analytics.com;
+connect-src 'self';
 base-uri 'self';
-font-src 'self';
+font-src 'self' data:;
 form-action 'none';
 frame-ancestors 'self';
-frame-src https://www.youtube.com;
-img-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com;
-object-src 'none';
-script-src 'self' https://ssl.google-analytics.com;
-style-src 'self' 'unsafe-inline'\""
+frame-src 'self';
+img-src 'self' data: https://ssl.gstatic.com;
+object-src 'none'\""
 HSTS="\"strict-transport-security\": \"max-age=${ONE_YEAR}; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
 XSS="\"x-xss-protection\": \"1; mode=block\""
