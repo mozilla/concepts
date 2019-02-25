@@ -4,6 +4,7 @@ metaCleanName: "scroll-experiment"
 metaVariant: "v1a"
 metaSurveyUrl: "valid url"
 metaDate: "creation date"
+firefoxLogo: "../images/firefox.png"
 concept:
   -
     cobrand: ""

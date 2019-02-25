@@ -8,6 +8,8 @@ import Footer from '../../components/conceptComponents/footer'
 import Hero from '../../components/conceptComponents/hero'
 import Layout from '../../components/conceptComponents/layout'
 import Navigation from '../../components/conceptComponents/navigation'
+import MozLight from './images/moz-white.png';
+import MozDark from './images/moz-black.png';
 
 import { setupGA } from '../../lib/ga-snippet'
 
@@ -52,11 +54,11 @@ const ConceptVariant = ({ data }) => {
         }
       </Helmet>
       <Layout>
-        <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant }} />
+        <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant, MozDark }} />
         <Hero {...{ hero, surveyUrl, cobrand, metaCleanName, metaVariant }} />
         <Facets {...{ facets }} />
         <Callout {...{ callout, surveyUrl, cobrand, metaCleanName, metaVariant }} />
-        <Footer />
+        <Footer {...{ MozLight }}/>
       </Layout>
     </>
   )

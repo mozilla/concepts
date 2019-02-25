@@ -22,9 +22,8 @@ const Callout = ({ callout, surveyUrl, metaCleanName, metaVariant }) => {
                 onClick={makeHandleClickLink(metaCleanName, metaVariant, 'nav')}
                 href={surveyUrl}
                 className="mzp-c-button mzp-t-secondary mzp-t-dark"
-              >
-                {cta}
-              </a>
+                dangerouslySetInnerHTML={{ __html: cta }}
+              />
             </div>
           </div>
         </div>
