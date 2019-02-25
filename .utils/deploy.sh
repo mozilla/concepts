@@ -31,14 +31,11 @@ ONE_YEAR="31536000"
 
 # script-src and style-src are defined by gatsby-plugin-csp and inserted
 # into a meta tag in each page.
-CSP="\"content-security-policy\": \"default-src 'self';
-connect-src 'self';
+CSP="\"content-security-policy\": \"connect-src 'self';
 base-uri 'self';
-font-src 'self' data:;
 form-action 'none';
 frame-ancestors 'self';
 frame-src 'self';
-img-src 'self' data: https://ssl.gstatic.com;
 object-src 'none'\""
 HSTS="\"strict-transport-security\": \"max-age=${ONE_YEAR}; includeSubDomains; preload\""
 TYPE="\"x-content-type-options\": \"nosniff\""
