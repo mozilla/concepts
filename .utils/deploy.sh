@@ -67,6 +67,7 @@ aws s3 sync \
   --metadata "{${CSP//$'\n'/ }, ${HSTS}, ${TYPE}, ${XSS}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
+  --delete \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
 # JSON; short cache
@@ -78,6 +79,7 @@ aws s3 sync \
   --metadata "{${ACAO}, ${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
+  --delete \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
 # XPI; short cache; amazon won't detect the content-type correctly
@@ -121,6 +123,7 @@ aws s3 sync \
   --metadata "{${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
+  --delete \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
 # Everything else; cache forever, because it has hashes in the filenames
@@ -130,6 +133,7 @@ aws s3 sync \
   --metadata "{${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
+  --delete
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
 # HTML - `path/index.html` to `path` resources; short cache
