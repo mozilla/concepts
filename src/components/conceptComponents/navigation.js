@@ -9,11 +9,9 @@ const Navigation = ({ hero, surveyUrl, metaCleanName, metaVariant, MozDark }) =>
       <div className="mzp-c-navigation">
         <div className="mzp-c-navigation-l-content">
           <div className="mzp-c-navigation-container">
-            <div className="mzp-c-navigation-logo">
-              <a href="https://www.mozilla.org/">
-                <img src={MozDark} alt="mozilla" />
-              </a>
-            </div>
+            <a href="https://www.mozilla.org/">
+              <img src={MozDark} alt="mozilla" />
+            </a>
             <div className="mzp-c-navigation-items" id="mzp-c-navigation-items">
               <div className="mzp-c-navigation-download">
                 <div className="mzp-c-button-download-container">

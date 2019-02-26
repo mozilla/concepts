@@ -3,14 +3,16 @@ metaName: "Scroll"
 metaCleanName: "scroll-experiment"
 metaVariant: "v1b"
 metaSurveyUrl: "valid url"
+metaSecondaryLink: ""
 metaDate: "creation date"
 concept:
   -
     cobrand: ""
+    cobrandIcon: "./images/scroll-icon.png"
     hero:
       -
         title: "Support the sites you love, avoid the ads you hate"
-        text: "We’ve partnered with <a href='https://scroll.com/about' rel='noopener noreferrer' target='__blank'>some of the world’s greatest publishers</a> to bring you a clean, fast, ad-free reading experience. We share your payment directly with the sites you read. They make more money which means they don’t have to distract you with ever more frustrating ads to keep the lights on."
+        text: "We’ve partnered with <a href='https://scroll.com/about' rel='noopener noreferrer' target='__blank'>some of the world’s greatest publishers</a> to bring you a better journalism experience. We share your payment directly with the sites you read. They make more money which means they can bring your great content without needing to distract you with ads just to keep the lights on."
         cta: "50% off for the first 6 months!<br/><big><strike>$4.99</strike> $2.49 per month</big>"
         image: "./images/v1.png"
     facets:
@@ -29,6 +31,6 @@ concept:
     callout:
       -
         title: ""
-        text: ""
-        cta: "50% off for the first 6 months!<br/><big><strike>$4.99</strike> $2.49 per month</big>"
+        text: "Mozilla is constantly looking for ways to keep our users safer, build better products, and to help improve the health of the web. This commitment to innovation is a core component of our cultural DNA."
+        cta: "Learn more about this project"
 ---

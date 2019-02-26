@@ -1,12 +1,14 @@
 ---
 metaName: "Scroll"
 metaCleanName: "scroll-experiment"
-metaVariant: "v1a"
+metaVariant: "v3a"
 metaSurveyUrl: "valid url"
+metaSecondaryLink: ""
 metaDate: "creation date"
 concept:
   -
     cobrand: ""
+    cobrandIcon: "./images/scroll-icon.png"
     hero:
       -
         title: "Hate ads?! Love Firefox? Get an ad-free internet and support Mozilla!"
@@ -29,6 +31,6 @@ concept:
     callout:
       -
         title: ""
-        text: ""
-        cta: "Sign up now! $4.99 per month"
+        text: "Mozilla is constantly looking for ways to keep our users safer, build better products, and to help improve the health of the web. This commitment to innovation is a core component of our cultural DNA."
+        cta: "Learn more about this project"
 ---

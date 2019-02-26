@@ -22,9 +22,11 @@ const ConceptVariant = ({ data }) => {
     metaCleanName,
     metaVariant,
     metaSurveyUrl,
+    metaSecondaryLink,
     concept,
   } = data.markdownRemark.frontmatter
-  const { hero, facets, callout, cobrand } = concept[0]
+  const { hero, facets, callout, cobrand, cobrandIcon } = concept[0]
+
 
   let params;
   if (typeof window === 'object') {
@@ -55,9 +57,9 @@ const ConceptVariant = ({ data }) => {
       </Helmet>
       <Layout>
         <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant, MozDark }} />
-        <Hero {...{ hero, surveyUrl, cobrand, metaCleanName, metaVariant }} />
+        <Hero {...{ hero, surveyUrl, cobrand, cobrandIcon, metaCleanName, metaVariant }} />
         <Facets {...{ facets }} />
-        <Callout {...{ callout, surveyUrl, cobrand, metaCleanName, metaVariant }} />
+        <Callout {...{ callout, surveyUrl, metaSecondaryLink, cobrand, metaCleanName, metaVariant }} />
         <Footer {...{ MozLight }}/>
       </Layout>
     </>
@@ -77,8 +79,12 @@ export const query = graphql`
         metaCleanName
         metaVariant
         metaSurveyUrl
+        metaSecondaryLink
         concept {
           cobrand
+          cobrandIcon {
+            publicURL
+          }
           hero {
             title
             text
