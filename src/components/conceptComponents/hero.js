@@ -11,8 +11,9 @@ const Hero = ({ hero, surveyUrl, cobrand, cobrandIcon, metaCleanName, metaVarian
           <h1 className="mzp-c-hero-title">{title}</h1>
           {cobrand !== '' && (
             <h4 className="cobrand">
+              powered by
               <img src={cobrandIcon.publicURL} alt={cobrand} />
-              powered by&nbsp;<b>{cobrand}</b>
+              <b>{cobrand}</b>
             </h4>
           )}
           <div className="mzp-c-hero-desc">
