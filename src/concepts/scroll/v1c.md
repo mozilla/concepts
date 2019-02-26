@@ -2,8 +2,8 @@
 metaName: "Scroll"
 metaCleanName: "scroll-experiment"
 metaVariant: "v1c"
-metaSurveyUrl: "valid url"
-metaSecondaryLink: ""
+metaSurveyUrl: "https://qsurvey.mozilla.com/s3/sdmt"
+metaSecondaryLink: "https://blog.mozilla.org/futurereleases/2019/02/25/exploring-alternative-funding-models-for-the-web/"
 metaDate: "creation date"
 concept:
   -

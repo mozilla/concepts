@@ -4,7 +4,7 @@ import { makeHandleClickLink } from '../../lib/ga-snippet'
 
 const Callout = ({ callout, surveyUrl, metaSecondaryLink, metaCleanName, metaVariant }) => {
   const { title, text, cta } = callout[0]
-  const outbound = metaSecondaryLink === '' ? cta : metaSecondaryLink
+  const outbound = metaSecondaryLink === '' ? surveyUrl : metaSecondaryLink
   return (
     <section
       className="mzp-c-call-out-compact mzp-t-product-firefox mzp-t-firefox mzp-t-dark"
