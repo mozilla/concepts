@@ -80,38 +80,6 @@ aws s3 sync \
   --acl "public-read" \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
-# XPI; short cache; amazon won't detect the content-type correctly
-aws s3 sync \
-  --cache-control "max-age=${TEN_MINUTES}" \
-  --content-type "application/x-xpinstall" \
-  --exclude "*" \
-  --include "*.xpi" \
-  --metadata "{${HSTS}, ${TYPE}}" \
-  --metadata-directive "REPLACE" \
-  --acl "public-read" \
-  ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
-
-# RDF; short cache; amazon won't detect the content-type correctly
-aws s3 sync \
-  --cache-control "max-age=${TEN_MINUTES}" \
-  --content-type "text/rdf" \
-  --exclude "*" \
-  --include "*.rdf" \
-  --metadata "{${HSTS}, ${TYPE}}" \
-  --metadata-directive "REPLACE" \
-  --acl "public-read" \
-  ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
-
-# l10n files; short cache;
-aws s3 sync \
-    --cache-control "max-age=${TEN_MINUTES}" \
-    --exclude "*" \
-    --include "*.ftl" \
-    --metadata "{${HSTS}, ${TYPE}}" \
-    --metadata-directive "REPLACE" \
-    --acl "public-read" \
-    ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
-
 # SVG; cache forever, assign correct content-type
 aws s3 sync \
   --cache-control "max-age=${ONE_YEAR}, immutable" \
@@ -125,11 +93,11 @@ aws s3 sync \
 
 # Everything else; cache forever, because it has hashes in the filenames
 aws s3 sync \
-  --delete \
   --cache-control "max-age=${ONE_YEAR}, immutable" \
   --metadata "{${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
+  --delete \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
 # HTML - `path/index.html` to `path` resources; short cache
