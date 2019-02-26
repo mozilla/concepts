@@ -75,7 +75,7 @@ aws s3 sync \
   --content-type "application/json" \
   --exclude "*" \
   --include "*.json" \
-  --metadata "{${ACAO}, ${HSTS}, ${TYPE}}" \
+  --metadata "{${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
