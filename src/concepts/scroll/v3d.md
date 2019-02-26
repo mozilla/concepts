@@ -1,16 +1,18 @@
 ---
 metaName: "Scroll"
 metaCleanName: "scroll-experiment"
-metaVariant: "v1d"
+metaVariant: "v3d"
 metaSurveyUrl: "valid url"
+metaSecondaryLink: ""
 metaDate: "creation date"
 concept:
   -
     cobrand: "Scroll"
+    cobrandIcon: "./images/scroll-icon.png"
     hero:
       -
         title: "Hate ads?! Love Firefox? Get an ad-free internet and support Mozilla!"
-        text: "<b>Mozilla makes Firefox, a free product that makes the internet better, but that takes money.</b> So we’ve partnered with <a href='https://scroll.com' rel='noopener noreferrer' target='__blank'>Scroll</a> to bring you a clean, fast, ad-free subscription reading experience on some of <a href='https://scroll.com/about' rel='noopener noreferrer' target='__blank'>some of the world’s greatest publisher sites</a>. Every subscription helps support Mozilla so that we can continue fighting for a free and open web."
+        text: "Mozilla makes Firefox, a free product that makes the internet better, but that takes money. So we’ve partnered with <a href='https://scroll.com' rel='noopener noreferrer' target='__blank'>Scroll</a> to bring you a clean, fast, ad-free subscription reading experience on some of <a href='https://scroll.com/about' rel='noopener noreferrer' target='__blank'>some of the world’s greatest publisher sites</a>. Every subscription helps support Mozilla so that we can continue fighting for a free and open web."
         cta: "50% off for the first 6 months!<br/><big><strike>$4.99</strike> $2.49 per month</big>"
         image: "./images/v3-scroll.png"
     facets:
@@ -29,6 +31,6 @@ concept:
     callout:
       -
         title: ""
-        text: ""
-        cta: "50% off for the first 6 months!<br/><big><strike>$4.99</strike> $2.49 per month</big>"
+        text: "Mozilla is constantly looking for ways to keep our users safer, build better products, and to help improve the health of the web. This commitment to innovation is a core component of our cultural DNA."
+        cta: "Learn more about this project"
 ---

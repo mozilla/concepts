@@ -2,8 +2,9 @@ import React from 'react'
 
 import { makeHandleClickLink } from '../../lib/ga-snippet'
 
-const Callout = ({ callout, surveyUrl, metaCleanName, metaVariant }) => {
+const Callout = ({ callout, surveyUrl, metaSecondaryLink, metaCleanName, metaVariant }) => {
   const { title, text, cta } = callout[0]
+  const outbound = metaSecondaryLink === '' ? cta : metaSecondaryLink
   return (
     <section
       className="mzp-c-call-out-compact mzp-t-product-firefox mzp-t-firefox mzp-t-dark"
@@ -20,7 +21,7 @@ const Callout = ({ callout, surveyUrl, metaCleanName, metaVariant }) => {
             <div className="mzp-c-button-download-container">
               <a
                 onClick={makeHandleClickLink(metaCleanName, metaVariant, 'nav')}
-                href={surveyUrl}
+                href={outbound}
                 className="mzp-c-button mzp-t-secondary mzp-t-dark"
                 dangerouslySetInnerHTML={{ __html: cta }}
               />

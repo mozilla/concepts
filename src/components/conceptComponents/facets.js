@@ -9,8 +9,6 @@ const Facets = ({ facets }) => (
         <div className={`mzp-c-billboard ${flipClass}`} key={index}>
           <div className="mzp-c-billboard-image-container">
             <img
-              height="346"
-              width="346"
               className="mzp-c-billboard-image"
               src={facet.image.publicURL}
               alt={facet.title}

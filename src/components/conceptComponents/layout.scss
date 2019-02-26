@@ -11,10 +11,18 @@
 }
 
 .cobrand {
-  margin: -10px 0 20px;
+  margin: -16px 0 20px;
   font-weight: 400;
   font-family: "Open Sans", X-LocaleSpecific, sans-serif;
   font-size: 24px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 32px;
+    height: 32px;
+    margin: 4px 4px 0 0;
+  }
 }
 
 .mzp-t-download {
@@ -33,7 +41,27 @@
   padding: 40px;
 }
 
-.mzp-c-footer-secondary img {
+.mzp-c-footer-secondary img,
+.mzp-c-navigation-container img {
+  margin: 20px 0 10px;
   height: 32px;
   width: auto;
+}
+
+.mzp-c-billboard-image-container img{
+  height: auto;
+  max-width: 346px !important;
+}
+
+@media (max-width: 1056px) {
+  .mzp-c-billboard-image-container img{
+    height: auto;
+    max-width: 300px !important;
+  }
+}
+
+@media (min-width: 1057px) {
+  .mzp-c-billboard-image-container img {
+    margin-top: 56px !important;
+  }
 }
