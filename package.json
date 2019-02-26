@@ -30,7 +30,7 @@
   ],
   "license": "MPL 2.0",
   "scripts": {
-    "build": "gatsby build",
+    "build": "rm -rf .cache public && gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
