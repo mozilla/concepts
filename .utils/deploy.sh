@@ -67,6 +67,7 @@ aws s3 sync \
   --metadata "{${CSP//$'\n'/ }, ${HSTS}, ${TYPE}, ${XSS}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
+  --delete \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
 # JSON; short cache
@@ -75,9 +76,10 @@ aws s3 sync \
   --content-type "application/json" \
   --exclude "*" \
   --include "*.json" \
-  --metadata "{${ACAO}, ${HSTS}, ${TYPE}}" \
+  --metadata "{${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
+  --delete \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
 # SVG; cache forever, assign correct content-type
@@ -89,6 +91,7 @@ aws s3 sync \
   --metadata "{${HSTS}, ${TYPE}}" \
   --metadata-directive "REPLACE" \
   --acl "public-read" \
+  --delete \
   ${ARTIFACTS}/ s3://${CONCEPTS_BUCKET}/
 
 # Everything else; cache forever, because it has hashes in the filenames
