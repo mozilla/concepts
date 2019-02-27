@@ -38,16 +38,6 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         const componentPath = `./src/templates/${node.fields.type}/index.js`;
-        let chopSlug = node.fields.slug;
-        chopSlug = chopSlug.substring(0, chopSlug.length - 1);
-        createPage({
-          path: chopSlug,
-          component: path.resolve(componentPath),
-          context: {
-            slug: node.fields.slug,
-            type: node.fields.type,
-          },
-        });
         createPage({
           path: node.fields.slug,
           component: path.resolve(componentPath),
