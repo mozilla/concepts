@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -23,7 +24,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: 'gatsby-plugin-sass',
       options: {
         includePaths: [
           require('path').resolve(__dirname, 'node_modules')
@@ -45,15 +46,15 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-csp`,
+      resolve: 'gatsby-plugin-csp',
       options: {
         mergeDefaultDirectives: false,
         directives: {
-          "script-src": "'self' https://tagmanager.google.com/ https://www.googletagmanager.com/ https://www.google-analytics.com/",
-          "style-src": "'self' https://tagmanager.google.com/ https://fonts.googleapis.com/",
-          "img-src": "'self' data: https://ssl.gstatic.com",
-          "font-src": "'self' data:",
-          "default-src": "'self'"
+          'script-src': '\'self\' https://tagmanager.google.com/ https://www.googletagmanager.com/ https://www.google-analytics.com/',
+          'style-src': '\'self\' https://tagmanager.google.com/ https://fonts.googleapis.com/',
+          'img-src': '\'self\' data: https://ssl.gstatic.com',
+          'font-src': '\'self\' data:',
+          'default-src': '\'self\''
         }
       }
     }
