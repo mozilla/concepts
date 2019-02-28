@@ -12,9 +12,9 @@ concept:
     hero:
       -
         title: "Support the sites you love, avoid the ads you hate"
-        text: "Mozilla’s partner, <a href='https://scroll.com' rel='noopener noreferrer' target='__blank'>Scroll</a>, teamed up with <a href='https://scroll.com/about' rel='noopener noreferrer' target='__blank'>some of the world’s greatest publishers</a> to bring you a better journalism experience. Scroll shares your payment directly with the sites you read. They make more money which means they can bring your great content without needing to distract you with ads just to keep the lights on."
+        text: "Mozilla’s partner, <a href='https://scroll.com' rel='noopener noreferrer' target='__blank'>Scroll</a>, teamed up with <a href='https://scroll.com/sites' rel='noopener noreferrer' target='__blank'>some of the world’s greatest publishers</a> to bring you a better journalism experience. Scroll shares your payment directly with the sites you read. They make more money which means they can bring you great content without needing to distract you with ads just to keep the lights on."
         cta: "50% off for the first 6 months!<br/><big><strike>$4.99</strike> $2.49 per month</big>"
-        image: "./images/v1-scroll.png"
+        image: "./images/v2-scroll.png"
     facets:
       -
         title: "That's not all!"

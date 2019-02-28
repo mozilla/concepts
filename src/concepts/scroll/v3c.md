@@ -12,9 +12,9 @@ concept:
     hero:
       -
         title: "Hate ads?! Love Firefox? Get an ad-free internet and support Mozilla!"
-        text: "Mozilla makes Firefox, a free product that makes the internet better, but that takes money. So we’ve partnered with <a href='https://scroll.com' rel='noopener noreferrer' target='__blank'>Scroll</a> to bring you a clean, fast, ad-free subscription reading experience on some of <a href='https://scroll.com/about' rel='noopener noreferrer' target='__blank'>some of the world’s greatest publisher sites</a>. Every subscription helps support Mozilla so that we can continue fighting for a free and open web."
+        text: "Mozilla makes Firefox, a free product that makes the internet better, but that takes money. So we’ve partnered with <a href='https://scroll.com' rel='noopener noreferrer' target='__blank'>Scroll</a> to bring you a clean, fast, ad-free subscription reading experience on some of <a href='https://scroll.com/sites' rel='noopener noreferrer' target='__blank'>some of the world’s greatest publisher sites</a>. Every subscription helps support Mozilla so that we can continue fighting for a free and open web."
         cta: "Sign up now! $4.99 per month"
-        image: "./images/v3-scroll.png"
+        image: "./images/v2-scroll.png"
     facets:
       -
         title: "That's not all!"
