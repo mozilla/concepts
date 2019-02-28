@@ -51,7 +51,7 @@ module.exports = {
         directives: {
           'script-src': '\'self\' https://tagmanager.google.com/ https://www.googletagmanager.com/ https://www.google-analytics.com/',
           'style-src': '\'self\' https://tagmanager.google.com/ https://fonts.googleapis.com/',
-          'img-src': '\'self\' data: https://ssl.gstatic.com',
+          'img-src': '\'self\' data: https://ssl.gstatic.com https://www.google-analytics.com',
           'font-src': '\'self\' data:',
           'default-src': '\'self\''
         }
