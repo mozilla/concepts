@@ -1,7 +1,7 @@
 import React from 'react'
-import layout from './conceptComponents/layout';
+import Layout from './conceptComponents/layout';
 
 const PageNotFound = ({children}) =>
-  <layout>{children}</layout>
+  <Layout>{children}</Layout>
 
 export default PageNotFound
