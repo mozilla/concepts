@@ -39,8 +39,14 @@ const ConceptVariant = ({ data }) => {
 
   console.log(params.toString());
 
+  console.log(params.get('rc'));
+  console.log(params.get('rv'));
+
   const rc = encodeURIComponent(params.get('rc'))
   const rv = encodeURIComponent(params.get('rv'))
+
+  console.log(rc);
+  console.log(rv);
   const aid = metaCleanName
   const av = metaVariant
   const t = typeof window === 'object' ? navigator.doNotTrack === "1" : false
