@@ -37,7 +37,8 @@ const ConceptVariant = ({ data }) => {
     }
   }
 
-  console.log(params);
+  console.log(params.toString());
+
   const rc = encodeURIComponent(params.get('rc'))
   const rv = encodeURIComponent(params.get('rv'))
   const aid = metaCleanName
