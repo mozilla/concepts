@@ -7,7 +7,7 @@ function gtag(){
   if (typeof window !== 'object') {
     return;
   }
-  if (typeof navigator === 'object' && navigator.doNotTrack === "1") {
+  if (typeof navigator === 'object' && navigator.doNotTrack === '1') {
     return;
   }
   //check if user has seen this experiment before:
@@ -16,13 +16,13 @@ function gtag(){
 
   // if they're not debugging, set a localstorage item that says they have
   if (arguments.length === 3 && !(arguments[2].debug)) {
-    localStorage.setItem(aid, true)
+    localStorage.setItem(aid, true);
   }
 
   // if they've seen this experiment, don't send stuff
-  if (hasSeenId) {
-    return
-  }
+  // if (hasSeenId) {
+  //   return;
+  // }
 
   window.dataLayer.push(arguments);
 }
@@ -31,11 +31,11 @@ export function setupGA(metaCleanName, metaVariant) {
   if (typeof window !== 'object') {
     return;
   }
-  if (typeof navigator === 'object' && navigator.doNotTrack === "1") {
+  if (typeof navigator === 'object' && navigator.doNotTrack === '1') {
     return;
   }
 
-  const params = new URLSearchParams(window.location.search)
+  const params = new URLSearchParams(window.location.search);
 
   gtag('js', new Date());
 
@@ -56,8 +56,8 @@ export function setupGA(metaCleanName, metaVariant) {
     debug: params.get('debug')
   });
 
-  gtag("event", "visit", {
-    event_category: "Page",
+  gtag('event', 'visit', {
+    event_category: 'Page',
     rc: params.get('rc'),
     rv: params.get('rv'),
     aid: metaCleanName,
@@ -67,19 +67,19 @@ export function setupGA(metaCleanName, metaVariant) {
 }
 
 export function makeHandleClickLink(aid, av, label) {
-  return (e) => {
-    const params = new URLSearchParams(window.location.search)
+  return () => {
+    const params = new URLSearchParams(window.location.search);
     gtag(
-      "event", "click", {
-        event_category: "CTA",
+      'event', 'click', {
+        event_category: 'CTA',
         event_label: label,
         rc: params.get('rc'),
         rv: params.get('rv'),
         aid: aid,
         av: av,
         debug: params.get('debug')
-      })
-  } 
+      });
+  };
 }
 
 
