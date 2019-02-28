@@ -23,6 +23,8 @@ const Hero = ({ hero, surveyUrl, cobrand, cobrandIcon, metaCleanName, metaVarian
             <a
               onClick={makeHandleClickLink(metaCleanName, metaVariant, 'primary')}
               className="mzp-c-button mzp-t-download mzp-t-firefox mzp-t-product-firefox"
+              target="__blank"
+              rel="noopener noreferrer"
               href={surveyUrl}
               dangerouslySetInnerHTML={{ __html: cta }}
             />
