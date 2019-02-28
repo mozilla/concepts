@@ -31,7 +31,7 @@ ONE_YEAR="31536000"
 
 # script-src and style-src are defined by gatsby-plugin-csp and inserted
 # into a meta tag in each page.
-CSP="\"content-security-policy\": \"connect-src 'self' 'https://www.google-analytics.com';
+CSP="\"content-security-policy\": \"connect-src 'self' https://www.google-analytics.com;
 base-uri 'self';
 form-action 'none';
 frame-ancestors 'self';
