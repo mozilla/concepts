@@ -12,9 +12,9 @@ concept:
     hero:
       -
         title: "Ads are distracting! Don’t get distracted from a great read…"
-        text: "Mozilla’s newest service gives you special ad-free versions of all your <a href='https://scroll.com/about' rel='noopener noreferrer' target='__blank'>favorite news sites</a>. From cleaner pages to handy reading tools, we’ll let you experience great content with new focus – and we pay publishers more than advertising."
+        text: "Mozilla’s newest service gives you special ad-free versions of all your <a href='https://scroll.com/sites' rel='noopener noreferrer' target='__blank'>favorite news sites</a>. From cleaner pages to handy reading tools, we’ll let you experience great content with new focus – and we pay publishers more than advertising."
         cta: "Sign up now! $4.99 per month"
-        image: "./images/v1.png"
+        image: "./images/v2.png"
     facets:
       -
         title: "That's not all!"

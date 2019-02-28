@@ -12,7 +12,7 @@ concept:
     hero:
       -
         title: "Ads are distracting! Don’t get distracted from a great read…"
-        text: "Mozilla’s partner, <a href='https://scroll.com' rel='noopener noreferrer' target='__blank'>Scroll</a>, gives you special ad-free versions of all your <a href='https://scroll.com/about' rel='noopener noreferrer' target='__blank'>favorite news sites</a>. From cleaner pages to handy reading tools, Scroll lets you experience great content with new focus – and pays publishers more than advertising."
+        text: "Mozilla’s partner, <a href='https://scroll.com' rel='noopener noreferrer' target='__blank'>Scroll</a>, gives you special ad-free versions of all your <a href='https://scroll.com/sites' rel='noopener noreferrer' target='__blank'>favorite news sites</a>. From cleaner pages to handy reading tools, Scroll lets you experience great content with new focus – and pays publishers more than advertising."
         cta: "Sign up now! $4.99 per month"
         image: "./images/v2-scroll.png"
     facets:

@@ -21,6 +21,8 @@ const Callout = ({ callout, surveyUrl, metaSecondaryLink, metaCleanName, metaVar
             <div className="mzp-c-button-download-container">
               <a
                 onClick={makeHandleClickLink(metaCleanName, metaVariant, 'nav')}
+                target="__blank"
+                rel="noopener noreferrer"
                 href={outbound}
                 className="mzp-c-button mzp-t-secondary mzp-t-dark"
                 dangerouslySetInnerHTML={{ __html: cta }}
