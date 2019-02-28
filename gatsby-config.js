@@ -53,6 +53,7 @@ module.exports = {
           'style-src': '\'self\' https://tagmanager.google.com/ https://fonts.googleapis.com/',
           'img-src': '\'self\' data: https://ssl.gstatic.com https://www.google-analytics.com',
           'font-src': '\'self\' data:',
+          'connect-src': '\'self\' https://www.google-analytics.com',
           'default-src': '\'self\''
         }
       }
