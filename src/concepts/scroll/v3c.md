@@ -1,5 +1,5 @@
 ---
-metaName: "scroll-experiment"
+metaName: "Scroll"
 metaCleanName: "scroll-experiment"
 metaVariant: "v3c"
 metaSurveyUrl: "https://qsurvey.mozilla.com/s3/sdmt"
