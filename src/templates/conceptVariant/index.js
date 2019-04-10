@@ -60,7 +60,7 @@ const ConceptVariant = ({ data }) => {
         <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant, MozDark }} />
         <Hero {...{ hero, surveyUrl, cobrand, cobrandIcon, metaCleanName, metaVariant }} />
         <Facets {...{ facets }} />
-        <Callout {...{ callout, surveyUrl, metaSecondaryLink, cobrand, metaCleanName, metaVariant }} />
+        <Callout {...{ callout, surveyUrl, metaSecondaryLink, cobrand, metaCleanName, metaVariant, hero }} />
         <Footer {...{ MozLight }}/>
       </Layout>
     </>
