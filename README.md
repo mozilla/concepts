@@ -31,6 +31,10 @@ Skip this section if you've already cloned the Fx Concepts repository.
 
 `gatsby develop` to run locally at `localhost:8000`. You can test GraphQL queries at `localhost:8000/___graphql`
 
+### Deoployments
+
+Can be found [here](docs/deployments.md).
+
 ### Adding Content
 
 Product concepts can be found in the `src/concepts` directory. Each concept has the following basic structure:
