@@ -18,15 +18,15 @@ concept:
     facets:
       -
         title: "That's not all!"
-        text: "Subscribers  also get access to audio versions of articles, bookmarks that are seamlessly synced across devices, exclusive top recommended reads, and an app that helps you find and finish great content, all without the distraction of advertising."
+        text: "Subscribers also get access to audio versions of articles, bookmarks that are seamlessly synced across devices and an app that helps you find and finish great content, all without the distraction of advertising."
         image: "./images/s1-scroll.png"
       -
         title: "Works everywhere you find articles"
-        text: "No matter how you find an article, our ad-free experience is there. It’s even browser agnostic. That’s right! You’ll still Mozilla and Scroll’s amazing experience even if you use Safari, Chrome, or IE. Whether you discover content in blogs or on apps like Twitter and Reddit, whether you’re on desktop or mobile, it just works—because who needs another thing to check in the morning?"
+        text: "No matter how you find an article, our ad-free experience is there. It’s even browser agnostic. That’s right! You’ll still get Mozilla and Scroll’s amazing experience even if you use Safari, Chrome, or IE. Whether you discover content in blogs or apps, whether you’re on desktop or mobile, it just works—because who needs another thing to check in the morning?"
         image: "./images/s2-scroll.png"
       -
         title: "Finish what you started reading"
-        text: "When life interrupts your reading, Mozilla helps  you automatically pick up where you left off. Find a story on your laptop and resume from the same spot on your phone. Need to get in the car? Switch to audio on the go"
+        text: "When life interrupts your reading, Scroll helps you automatically pick up where you left off. Find a story on your laptop and resume from the same spot on your phone. Need to get in the car? Switch to audio on the go"
         image: "./images/s3-scroll.png"
     callout:
       -
