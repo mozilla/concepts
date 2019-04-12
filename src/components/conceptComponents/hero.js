@@ -2,7 +2,7 @@ import React from 'react'
 
 import { makeHandleClickLink } from '../../lib/ga-snippet'
 
-const Hero = ({ hero, surveyUrl, cobrand, cobrandIcon, metaCleanName, metaVariant }) => {
+const Hero = ({ hero, primaryLink, cobrand, cobrandIcon, metaCleanName, metaVariant }) => {
   const { title, text, cta, image } = hero[0]
   return (
     <section className="mzp-c-hero mzp-has-image mzp-t-product-firefox">
@@ -25,7 +25,7 @@ const Hero = ({ hero, surveyUrl, cobrand, cobrandIcon, metaCleanName, metaVarian
               className="mzp-c-button mzp-t-download mzp-t-firefox mzp-t-product-firefox"
               target="__blank"
               rel="noopener noreferrer"
-              href={surveyUrl}
+              href={primaryLink}
               dangerouslySetInnerHTML={{ __html: cta }}
             />
           </p>

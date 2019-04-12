@@ -21,7 +21,7 @@ const ConceptVariant = ({ data }) => {
     metaName,
     metaCleanName,
     metaVariant,
-    metaSurveyUrl,
+    metaPrimaryLink,
     metaSecondaryLink,
     concept,
   } = data.markdownRemark.frontmatter
@@ -43,7 +43,7 @@ const ConceptVariant = ({ data }) => {
   const av = metaVariant
   const t = typeof window === 'object' ? navigator.doNotTrack === "1" : false
   const debug = encodeURIComponent(params.get('debug'))
-  const surveyUrl = `${metaSurveyUrl}/?rc=${rc}&rv=${rv}&aid=${aid}&av=${av}&t=${t}&debug=${debug}`
+  const primaryLink = `${metaPrimaryLink}/?rc=${rc}&rv=${rv}&aid=${aid}&av=${av}&t=${t}&debug=${debug}`
 
   setupGA(metaCleanName, metaVariant)
 
@@ -57,10 +57,10 @@ const ConceptVariant = ({ data }) => {
         }
       </Helmet>
       <Layout>
-        <Navigation {...{ hero, surveyUrl, metaCleanName, metaVariant, MozDark }} />
-        <Hero {...{ hero, surveyUrl, cobrand, cobrandIcon, metaCleanName, metaVariant }} />
+        <Navigation {...{ MozDark }} />
+        <Hero {...{ hero, primaryLink, cobrand, cobrandIcon, metaCleanName, metaVariant }} />
         <Facets {...{ facets }} />
-        <Callout {...{ callout, surveyUrl, metaSecondaryLink, cobrand, metaCleanName, metaVariant, hero }} />
+        <Callout {...{ callout, primaryLink, metaSecondaryLink, cobrand, metaCleanName, metaVariant, hero }} />
         <Footer {...{ MozLight }}/>
       </Layout>
     </>
@@ -79,7 +79,7 @@ export const query = graphql`
         metaName
         metaCleanName
         metaVariant
-        metaSurveyUrl
+        metaPrimaryLink
         metaSecondaryLink
         concept {
           cobrand

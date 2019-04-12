@@ -14,7 +14,10 @@
 .center {
   display: flex;
   justify-content: center;
-  margin-top: -10px;
+  margin: 0;
+  padding: 60px 0;
+  background: #ededf0;
+  margin-top: -32px;
 }
 
 .cobrand {
@@ -53,10 +56,16 @@
     height: auto;
     max-width: 300px !important;
   }
+
+
 }
 
 @media (min-width: 1057px) {
   .mzp-c-billboard-image-container img {
     margin-top: 56px !important;
+  }
+
+  .center {
+    margin-top: -96px;
   }
 }
