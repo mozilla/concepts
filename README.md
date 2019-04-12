@@ -70,10 +70,13 @@ Concept variants are built on Markdown frontmatter which is really just YAML. Ga
 metaName: "Copy Me" // A human-readable name for your project. This should be the same across all variants.
 metaCleanName: "copyme" // A URL-friendly name for your project used as a query parameter in your survey. This should be the same across all variants.
 metaVariant: "control" // A URL-friendly variant name. This should be different for each treatment in your test.
-metaSurveyUrl: "valid url" // A surveyGizmo URL
+metaPrimaryLink: "valid url" // A surveyGizmo URL or other
+metaSecondaryLink: "valid url" // Link to a URL explaining this project, probably https://blog.mozilla.org/futurereleases/2019/02/25/exploring-alternative-funding-models-for-the-web/
 metaDate: "creation date" // A human readable datestamp
 concept: // The concept is what actually gets rendered onto the page
   -
+    cobrand: "Partner Name" // leave this blank if no partner
+    cobrandIcon: "Partner Icon" // note there need needs to be a vilid icon pat here...nothing will show up if partner name is left blank
     hero: // The hero is the big top thing on your concept page.
       -
         title: "Title"

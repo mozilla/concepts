@@ -2,11 +2,13 @@
 metaName: "Copy Me"
 metaCleanName: "copyme"
 metaVariant: "control"
-metaSurveyUrl: "valid url"
+metaPrimaryLink: "CTA Link"
+metaSecondaryLink: "Call Out Link"
 metaDate: "creation date"
 concept:
   -
     cobrand: "Partner Name"
+    cobrandIcon: "Partner Icon"
     hero:
       -
         title: "Title"
