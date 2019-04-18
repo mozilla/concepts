@@ -38,6 +38,18 @@ export function setupGA(metaCleanName, metaVariant) {
 
   const params = new URLSearchParams(window.location.search);
 
+  // HACK...if coming from a bought add we should
+  // convert UTM src and campaign to rc and rv
+  let rc = params.get('rc');
+  if (params.has('utm_source')) {
+    rc = params.get('utm_source');
+  }
+
+  let rv = params.get('rv');
+  if (params.has('utm_campaign')) {
+    rv = params.get('utm_campaign');
+  }
+
   gtag('js', new Date());
 
   // In gtag, the config event logs the pageview.
@@ -50,8 +62,8 @@ export function setupGA(metaCleanName, metaVariant) {
       dimension4: 'av',
       dimension5: 'debug'
     },
-    rc: params.get('rc'),
-    rv: params.get('rv'),
+    rc,
+    rv,
     aid: metaCleanName,
     av: metaVariant,
     debug: params.get('debug')
@@ -59,8 +71,8 @@ export function setupGA(metaCleanName, metaVariant) {
 
   gtag('event', 'visit', {
     event_category: 'Page',
-    rc: params.get('rc'),
-    rv: params.get('rv'),
+    rc,
+    rv,
     aid: metaCleanName,
     av: metaVariant,
     debug: params.get('debug')
@@ -70,12 +82,24 @@ export function setupGA(metaCleanName, metaVariant) {
 export function makeHandleClickLink(aid, av, label) {
   return () => {
     const params = new URLSearchParams(window.location.search);
+
+    // HACK...if coming from a bought add we should
+    // convert UTM src and campaign to rc and rv
+    let rc = params.get('rc');
+    if (params.has('utm_source')) {
+      rc = params.get('utm_source');
+    }
+
+    let rv = params.get('rv');
+    if (params.has('utm_campaign')) {
+      rv = params.get('utm_campaign');
+    }
     gtag(
       'event', 'click', {
         event_category: 'CTA',
         event_label: label,
-        rc: params.get('rc'),
-        rv: params.get('rv'),
+        rc,
+        rv,
         aid: aid,
         av: av,
         debug: params.get('debug')

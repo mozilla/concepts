@@ -33,12 +33,22 @@ const ConceptVariant = ({ data }) => {
     params = new URLSearchParams(window.location.search)
   } else {
     params = {
-      get: () => ''
+      get: () => '',
+      has: () => false
     }
   }
 
-  const rc = encodeURIComponent(params.get('rc'))
-  const rv = encodeURIComponent(params.get('rv'))
+  // HACK...if coming from a bought add we should
+  // convert UTM src and campaign to rc and rv
+  let rc = encodeURIComponent(params.get('rc'))
+  if (params.has('utm_source')) {
+    rc = encodeURIComponent(params.get('utm_source'));
+  }
+  let rv = encodeURIComponent(params.get('rv'))
+  if (params.has('utm_campaign')) {
+    rv = encodeURIComponent(params.get('utm_campaign'));
+  }
+
   const aid = metaCleanName
   const av = metaVariant
   const t = typeof window === 'object' ? navigator.doNotTrack === "1" : false
