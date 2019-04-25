@@ -39,14 +39,14 @@ const ConceptVariant = ({ data }) => {
   }
 
   // HACK...if coming from a bought add we should
-  // convert UTM src and campaign to rc and rv
+  // convert UTM src and term to rc and rv
   let rc = encodeURIComponent(params.get('rc'))
   if (params.has('utm_source')) {
     rc = encodeURIComponent(params.get('utm_source'));
   }
   let rv = encodeURIComponent(params.get('rv'))
-  if (params.has('utm_campaign')) {
-    rv = encodeURIComponent(params.get('utm_campaign'));
+  if (params.has('utm_term')) {
+    rv = encodeURIComponent(params.get('utm_term'));
   }
 
   const aid = metaCleanName
