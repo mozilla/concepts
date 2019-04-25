@@ -39,15 +39,15 @@ export function setupGA(metaCleanName, metaVariant) {
   const params = new URLSearchParams(window.location.search);
 
   // HACK...if coming from a bought add we should
-  // convert UTM src and campaign to rc and rv
+  // convert UTM src and term to rc and rv
   let rc = params.get('rc');
   if (params.has('utm_source')) {
     rc = params.get('utm_source');
   }
 
   let rv = params.get('rv');
-  if (params.has('utm_campaign')) {
-    rv = params.get('utm_campaign');
+  if (params.has('utm_term')) {
+    rv = params.get('utm_term');
   }
 
   gtag('js', new Date());
@@ -84,15 +84,15 @@ export function makeHandleClickLink(aid, av, label) {
     const params = new URLSearchParams(window.location.search);
 
     // HACK...if coming from a bought add we should
-    // convert UTM src and campaign to rc and rv
+    // convert UTM src and term to rc and rv
     let rc = params.get('rc');
     if (params.has('utm_source')) {
       rc = params.get('utm_source');
     }
 
     let rv = params.get('rv');
-    if (params.has('utm_campaign')) {
-      rv = params.get('utm_campaign');
+    if (params.has('utm_term')) {
+      rv = params.get('utm_term');
     }
     gtag(
       'event', 'click', {
