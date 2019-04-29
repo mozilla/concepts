@@ -2,7 +2,7 @@
 
 You can do this whenever you are ready to share anything on Stage
 
-1. https://github.com/mozilla/testpilot/releases/new
+1. https://github.com/mozilla/concepts/releases/new
 2. Tag Version: YYYY-MM-DD (append -N if more than one release is tagged on a given day: 2019-04-08-1)
 3. Release Title: YYYY-MM-DD
 4. Click `Publish`
