@@ -1,4 +1,4 @@
-## Tag Release ##
+## Tagging Releases ##
 
 You can do this whenever you are ready to share anything on Stage
 
