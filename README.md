@@ -1,5 +1,5 @@
 
-# Fx Concepts
+# Firefox Concepts
 
 Fx Concepts is a simple tool for building and testing value propositons for hypothetical future Firefox products and features.
 
