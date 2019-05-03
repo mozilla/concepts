@@ -17,6 +17,8 @@ This will happen on Thursday at the end of sprint.
 2. `git reset --hard YYYY-MM-DD`  # whatever your tag name is
 3. `git push mozilla stage -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
 
+You can check the release version of the staging server [here](https://firstlook.stage.mozaws.net/__version__).
+
 ## Test Stage ##
 
 Have people manually verify stage. If issues are found, file issues, resolve them and do a new stage push
@@ -32,4 +34,4 @@ Once we are comfortable that the site has been tested:
 
 ## Checking Deployments ##
 
-You can check the release version of staging and release servers visiting https://firstlook.stage.mozaws.net/__version__ and https://firstlook.firefox.com/__version__
+You can check the release version of the production  server [here](https://firstlook.firefox.com/__version__)
