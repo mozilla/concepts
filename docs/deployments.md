@@ -27,9 +27,9 @@ Have people manually verify stage. If issues are found, file issues, resolve the
 
 Once we are comfortable that the site has been tested:
 
-1. `git checkout production`
+1. `git checkout prod`
 2. `git reset --hard YYYY-MM-DD`  # whatever your tag name is
-3. `git push mozilla production -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
+3. `git push mozilla prod -f`  # Replace `mozilla` with whatever you name your upstream.  The `-f` is only necessary if we cherry-picked patches when we pushed last time.
 
 
 ## Checking Deployments ##
