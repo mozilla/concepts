@@ -19,7 +19,7 @@ module.exports = {
       options: {
         name: 'concepts',
         path: `${__dirname}/src/concepts`,
-        ignore: ['**/copy-me/*'],
+        ignore: ['**/copy-me/*', '**/alexa/*'],
       },
     },
     {
