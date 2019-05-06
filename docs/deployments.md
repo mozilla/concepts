@@ -35,3 +35,7 @@ Once we are comfortable that the site has been tested:
 ## Checking Deployments ##
 
 You can check the release version of the production  server [here](https://firstlook.firefox.com/__version__)
+
+## Rolling back deployments ##
+
+There are some weird issues with rolling back deployments with Gatsby. If you are trying to roll back before an experiment was deployed, it may not work...in a pinch you can add the experiment you want to get rid of to the [ignore list](https://github.com/mozilla/concepts/blob/2019-05-06/gatsby-config.js#L22) and do a new tag.
