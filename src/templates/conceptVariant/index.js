@@ -8,6 +8,7 @@ import Footer from '../../components/conceptComponents/footer'
 import Hero from '../../components/conceptComponents/hero'
 import Layout from '../../components/conceptComponents/layout'
 import Navigation from '../../components/conceptComponents/navigation'
+import PageNotFound from '../../components/pageNotFound';
 import MozLight from './images/moz-white.png';
 import MozDark from './images/moz-black.png';
 
@@ -17,6 +18,7 @@ import { setupGA } from '../../lib/ga-snippet'
 import './index.css'
 
 const ConceptVariant = ({ data }) => {
+  if (data.markdownRemark.fields.ignore) return <PageNotFound/>
   const {
     metaName,
     metaCleanName,
@@ -84,6 +86,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
         slug
+        ignore
       }
       frontmatter {
         metaName
