@@ -8,7 +8,7 @@ metaDate: "creation date"
 concept:
   -
     cobrand: "Partner Name"
-    cobrandIcon: "Partner Icon"
+    cobrandIcon: "./images/blank.png"
     hero:
       -
         title: "Title"
