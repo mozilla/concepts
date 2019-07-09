@@ -2,11 +2,11 @@ import React from 'react'
 
 import { makeHandleClickLink } from '../../lib/ga-snippet'
 
-const Callout = ({ callout, primaryLink, metaSecondaryLink, metaCleanName, metaVariant, hero }) => {
+const Callout = ({ callout, primaryLink, metaSecondaryLink, metaCleanName, metaVariant, hero, expire }) => {
   const { title, text, cta } = callout[0]
   return (
     <>
-      <p className="mzp-c-hero-cta center">
+       {!expire && <p className="mzp-c-hero-cta center">
         <a
           onClick={makeHandleClickLink(metaCleanName, metaVariant, 'primary-bottom')}
           className="mzp-c-button mzp-t-download mzp-t-firefox mzp-t-product-firefox"
@@ -15,7 +15,7 @@ const Callout = ({ callout, primaryLink, metaSecondaryLink, metaCleanName, metaV
           href={primaryLink}
           dangerouslySetInnerHTML={{ __html: hero[0].cta }}
         />
-      </p>
+      </p>}
       <section
         className="mzp-c-call-out-compact mzp-t-product-firefox mzp-t-firefox mzp-t-dark"
       >

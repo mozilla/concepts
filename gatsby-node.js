@@ -2,14 +2,10 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 // NOTE: this is kind of a hack,
-// but it makes the ignore list easy to maintain
-// each page gets ignored dependent on slug
-// the template still builds, but just with the 404 component
-// this was done b/c we wanted to hide all templates at once
-// and gatsby barks if you ignore all in gatsby-source-filesystem
+// but it makes the expire list easy to maintain
+// each page gets expired dependent on slug
 
-const IGNORE_LIST = [
-  '/copy-me/v1/',
+const EXPIRE_LIST = [
   '/vpn/',
   '/fx-scroll/t2a/',
   '/browser-asst/v1/',
@@ -37,7 +33,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode, basePath: 'concepts' });
     const type = 'conceptVariant';
-    const ignore = IGNORE_LIST.includes(slug);
+    const expire = EXPIRE_LIST.includes(slug);
     createNodeField({
       node,
       name: 'slug',
@@ -50,8 +46,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
     createNodeField({
       node,
-      name: 'ignore',
-      value: ignore,
+      name: 'expire',
+      value: expire,
     });
   }
 };
@@ -67,7 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
               fields {
                 slug
                 type
-                ignore
+                expire
               }
             }
           }

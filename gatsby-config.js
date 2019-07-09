@@ -18,7 +18,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'concepts',
-        path: `${__dirname}/src/concepts`
+        path: `${__dirname}/src/concepts`,
+        ignore: ['**/copy-me/*']
       },
     },
     {

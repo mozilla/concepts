@@ -8,9 +8,8 @@ import Footer from '../../components/conceptComponents/footer'
 import Hero from '../../components/conceptComponents/hero'
 import Layout from '../../components/conceptComponents/layout'
 import Navigation from '../../components/conceptComponents/navigation'
-import PageNotFound from '../../components/pageNotFound';
-import MozLight from './images/moz-white.png';
-import MozDark from './images/moz-black.png';
+import MozLight from './images/moz-white.png'
+import MozDark from './images/moz-black.png'
 
 import { setupGA } from '../../lib/ga-snippet'
 
@@ -18,7 +17,6 @@ import { setupGA } from '../../lib/ga-snippet'
 import './index.css'
 
 const ConceptVariant = ({ data }) => {
-  if (data.markdownRemark.fields.ignore) return <PageNotFound/>
   const {
     metaName,
     metaCleanName,
@@ -28,7 +26,7 @@ const ConceptVariant = ({ data }) => {
     concept,
   } = data.markdownRemark.frontmatter
   const { hero, facets, callout, cobrand, cobrandIcon } = concept[0]
-
+  const { expire } = data.markdownRemark.fields;
 
   let params;
   if (typeof window === 'object') {
@@ -69,10 +67,13 @@ const ConceptVariant = ({ data }) => {
         }
       </Helmet>
       <Layout>
+        {expire && <div className="expire">
+          This experiment is no longer active. Thank you for your participation.
+        </div>}
         <Navigation {...{ MozDark }} />
-        <Hero {...{ hero, primaryLink, cobrand, cobrandIcon, metaCleanName, metaVariant }} />
+        <Hero {...{ hero, primaryLink, cobrand, cobrandIcon, metaCleanName, metaVariant, expire }} />
         <Facets {...{ facets }} />
-        <Callout {...{ callout, primaryLink, metaSecondaryLink, cobrand, metaCleanName, metaVariant, hero }} />
+        <Callout {...{ callout, primaryLink, metaSecondaryLink, cobrand, metaCleanName, metaVariant, hero, expire }} />
         <Footer {...{ MozLight }}/>
       </Layout>
     </>
@@ -86,7 +87,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
         slug
-        ignore
+        expire
       }
       frontmatter {
         metaName

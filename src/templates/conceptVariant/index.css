@@ -3,3 +3,14 @@
     display: none;
   }
 }
+
+.expire {
+  background: #54ffbd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
