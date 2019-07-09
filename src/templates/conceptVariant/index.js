@@ -68,7 +68,7 @@ const ConceptVariant = ({ data }) => {
       </Helmet>
       <Layout>
         {expire && <div className="expire">
-          This experiment is no longer active. Thank you for your participation.
+          This study is no longer active. Thank you for your participation.
         </div>}
         <Navigation {...{ MozDark }} />
         <Hero {...{ hero, primaryLink, cobrand, cobrandIcon, metaCleanName, metaVariant, expire }} />
