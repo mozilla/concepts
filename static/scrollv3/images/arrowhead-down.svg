@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icons / New 16 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M16,24 C15.4696104,24 14.9609855,23.7890987 14.586,23.414 L4.586,13.414 C3.82805558,12.6292422 3.83889525,11.3818304 4.61036285,10.6103628 C5.38183045,9.83889525 6.62924223,9.82805558 7.414,10.586 L16,19.172 L24.586,10.586 C25.3707578,9.82805558 26.6181696,9.83889525 27.3896372,10.6103628 C28.1611047,11.3818304 28.1719444,12.6292422 27.414,13.414 L17.414,23.414 C17.0390145,23.7890987 16.5303896,24 16,24 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-1060.000000, -4197.000000)">
+            <g id="Icons-/-Arrowhead-Down-16" transform="translate(1056.000000, 4187.000000)">
+                <rect id="bouding-box" x="0" y="0" width="32" height="32"></rect>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Shape" fill-rule="nonzero"></g>
+                <g id="Color-/-Photon-/-White--60%" mask="url(#mask-2)" fill="#FFFFFF" fill-opacity="0.6" fill-rule="evenodd">
+                    <rect id="Rectangle" x="0" y="0" width="32" height="32"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
