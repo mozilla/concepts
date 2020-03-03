@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="48px" viewBox="0 0 28 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icons / Arrowhead Right 16 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M25.656,32 L42.828,14.828 C44.3438888,13.2584845 44.3222095,10.7636609 42.7792743,9.2207257 C41.2363391,7.6777905 38.7415155,7.65611116 37.172,9.172 L17.172,29.172 C15.6104722,30.7339994 15.6104722,33.2660006 17.172,34.828 L37.172,54.828 C38.7415155,56.3438888 41.2363391,56.3222095 42.7792743,54.7792743 C44.3222095,53.2363391 44.3438888,50.7415155 42.828,49.172 L25.656,32 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-112.000000, -3588.000000)">
+            <g id="Icons-/-Arrowhead-Left-16" transform="translate(96.000000, 3580.000000)">
+                <rect id="bouding-box" x="0" y="0" width="64" height="64"></rect>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Shape" fill-rule="nonzero"></g>
+                <g id="Color-/-Photon-/-Primary---Grey-90-80%" mask="url(#mask-2)" fill="#F9F9FA" fill-opacity="0.8" fill-rule="evenodd">
+                    <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

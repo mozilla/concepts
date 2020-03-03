@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="618px" height="417px" viewBox="0 0 618 417" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Group 40</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M18.5,0 C8.28273213,0 0,8.28273213 0,18.5 C0,28.7172679 8.28273213,37 18.5,37 C28.7172679,37 37,28.7172679 37,18.5 C36.9885303,8.28748682 28.7125132,0.011469733 18.5,0 Z M18.5,32.375 C10.8370491,32.375 4.625,26.1629509 4.625,18.5 C4.625,10.8370491 10.8370491,4.625 18.5,4.625 C26.1629509,4.625 32.375,10.8370491 32.375,18.5 C32.3660798,26.159253 26.159253,32.3660798 18.5,32.375 Z M26.59375,18.5 L18.5,18.5 L18.5,10.40625 C18.5,9.76767076 17.9823292,9.25 17.34375,9.25 C16.7051708,9.25 16.1875,9.76767076 16.1875,10.40625 L16.1875,19.65625 C16.1875,20.2948292 16.7051708,20.8125 17.34375,20.8125 L26.59375,20.8125 C27.2323292,20.8125 27.75,20.2948292 27.75,19.65625 C27.75,19.0176708 27.2323292,18.5 26.59375,18.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-40" transform="translate(-1.000000, -10.000000)">
+            <g id="Group-18" transform="translate(536.000000, 272.000000)" fill="#FFFFFF" font-size="16" line-spacing="34">
+                <text id="The-Verge" font-family="FirefoxSharpSans-Bold, Firefox Sharp Sans" font-weight="bold" fill-opacity="0.8">
+                    <tspan x="0" y="16">The Verge</tspan>
+                </text>
+                <text id="$1.78" font-family="InterUI-Regular, Inter UI" font-weight="normal">
+                    <tspan x="0" y="35">$1.78</tspan>
+                </text>
+            </g>
+            <g id="Group-19" transform="translate(86.000000, 327.000000)" fill="#FFFFFF" font-size="16" line-spacing="34">
+                <text id="Vox" font-family="FirefoxSharpSans-Bold, Firefox Sharp Sans" font-weight="bold" fill-opacity="0.8">
+                    <tspan x="26.48" y="16">Vox</tspan>
+                </text>
+                <text id="$0.45" font-family="InterUI-Regular, Inter UI" font-weight="normal">
+                    <tspan x="13.3863636" y="35">$0.45</tspan>
+                </text>
+            </g>
+            <g id="Group-35" transform="translate(0.000000, 169.000000)" fill="#FFFFFF" font-size="16" line-spacing="34">
+                <text id="BuzzFeed-News" font-family="FirefoxSharpSans-Bold, Firefox Sharp Sans" font-weight="bold" fill-opacity="0.8">
+                    <tspan x="0.512" y="16">BuzzFeed News</tspan>
+                </text>
+                <text id="$0.19" font-family="InterUI-Regular, Inter UI" font-weight="normal">
+                    <tspan x="86.4090909" y="35">$0.19</tspan>
+                </text>
+            </g>
+            <g id="Group-36" transform="translate(113.000000, 77.000000)" fill="#FFFFFF" font-size="16" line-spacing="34">
+                <text id="Slate" font-family="FirefoxSharpSans-Bold, Firefox Sharp Sans" font-weight="bold" fill-opacity="0.8">
+                    <tspan x="16.976" y="16">Slate</tspan>
+                </text>
+                <text id="$0.16" font-family="InterUI-Regular, Inter UI" font-weight="normal">
+                    <tspan x="16.4090909" y="35">$0.16</tspan>
+                </text>
+            </g>
+            <g id="Group-37" transform="translate(140.000000, 29.000000)" fill="#FFFFFF" font-size="16" line-spacing="34">
+                <text id="USA-Today" font-family="FirefoxSharpSans-Bold, Firefox Sharp Sans" font-weight="bold" fill-opacity="0.8">
+                    <tspan x="0.184" y="16">USA Today</tspan>
+                </text>
+                <text id="$0.10" font-family="InterUI-Regular, Inter UI" font-weight="normal">
+                    <tspan x="45.3863636" y="35">$0.10</tspan>
+                </text>
+            </g>
+            <g id="Group-38" transform="translate(174.000000, 0.000000)" fill="#FFFFFF" font-size="16" line-spacing="34">
+                <text id="Other-publishers" font-family="FirefoxSharpSans-Bold, Firefox Sharp Sans" font-weight="bold" fill-opacity="0.8">
+                    <tspan x="6.888" y="16">Other publishers</tspan>
+                </text>
+                <text id="$0.10-copy" font-family="InterUI-Regular, Inter UI" font-weight="normal">
+                    <tspan x="99.3863636" y="35">$0.10</tspan>
+                </text>
+            </g>
+            <g id="Group-13" transform="translate(156.000000, 77.000000)">
+                <path d="M175,0 L175,87.5 C223.3252,87.5 262.5,126.6748 262.5,175 C262.5,223.3252 223.3252,262.5 175,262.5 C159.0729,262.5 144.1405,258.2426 131.2766,250.8065 L87.5525,326.6137 C113.2817,341.4852 143.1458,350 175,350 C271.6497,350 350,271.6497 350,175 C350,78.3503 271.6497,0 175,0" id="Fill-1" fill="#712290"></path>
+                <path d="M87.5,175 L0,175 C0,239.7955 35.2177,296.3625 87.5525,326.6137 L131.2766,250.8065 C105.1085,235.6816 87.5,207.3974 87.5,175" id="Fill-3" fill="#962BB9"></path>
+                <path d="M24.71945,85.2978 C9.02755,111.5303 0.00035,142.2092 0.00035,175 L87.50035,175 C87.50035,158.6046 92.01395,143.2655 99.85955,130.1489 L24.71945,85.2978 Z" id="Fill-5" fill="#B933E1"></path>
+                <path d="M125.97508,102.51514 L76.94988,30.03014 C55.75948,44.38994 37.89198,63.27734 24.71938,85.29794 L99.85948,130.14904 C106.44578,119.13874 115.37988,109.69504 125.97508,102.51514" id="Fill-7" fill="#D64CF1"></path>
+                <path d="M150.8353,90.88205 L126.6706,6.76445 C108.7534,11.90175 92.0136,19.82155 76.9496,30.02965 L125.9748,102.51535 C133.5068,97.41095 141.8767,93.45035 150.8353,90.88205" id="Fill-9" fill="#F564FF"></path>
+                <path d="M175,87.5 L175,0 C158.2343,0 142.0216,2.3625 126.6706,6.7641 L150.8353,90.8824 C158.5108,88.6809 166.6168,87.5 175,87.5" id="Fill-11" fill="#F690FF"></path>
+            </g>
+            <g id="Group-16" transform="translate(278.000000, 234.000000)">
+                <g id="Group-16-Copy" transform="translate(75.000000, 3.000000)" stroke="#CDCAD3">
+                    <circle id="Oval" stroke-width="5" stroke-linecap="square" cx="16" cy="16" r="16"></circle>
+                    <g id="Group-17" transform="translate(11.000000, 7.000000)" stroke-linecap="round" stroke-width="2">
+                        <line x1="5.26406926" y1="-1.5107492e-13" x2="5.26406926" y2="18.4242424" id="Path"></line>
+                        <path d="M9.70562771,2.92024242 C7.57236364,1.74701299 0.853437229,0.872519481 0.853437229,4.91137662 C0.853437229,9.74642424 9.3858355,8.04020779 9.3858355,12.3060779 C9.3858355,16.5719481 3.83948052,16.2521558 -9.40200299e-14,14.8650736" id="Path"></path>
+                    </g>
+                </g>
+                <path d="M65,15.375 L65,12 L47,12 L47,15.375 L65,15.375 Z M65,24.625 L65,21.25 L47,21.25 L47,24.625 L65,24.625 Z" id="=" fill-opacity="0.8" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <g id="Icons-/-History-16">
+                    <rect id="bouding-box" x="0" y="0" width="37" height="37"></rect>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Shape" fill-rule="nonzero"></g>
+                    <g id="Color-/-Photon-/-Primary-(on-Dark)---Grey-10-80%" mask="url(#mask-2)" fill="#F9F9FA" fill-opacity="0.8" fill-rule="evenodd">
+                        <rect id="Rectangle" x="0" y="0" width="37" height="37"></rect>
+                    </g>
+                </g>
+            </g>
+            <path d="M302.818838,62.0165468 C303.323188,61.9236402 303.808801,62.2267205 303.955709,62.705365 L303.983453,62.8188376 L309.780651,94.2893396 C309.880704,94.8324858 309.521506,95.353902 308.97836,95.4539552 C308.47401,95.5468618 307.988397,95.2437815 307.841488,94.7651371 L307.813745,94.6516645 L302.016547,63.1811624 C301.916494,62.6380162 302.275691,62.1166001 302.818838,62.0165468 Z" id="Line" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <path d="M249.54355,77.9300778 C249.990175,77.6780326 250.548004,77.8065004 250.84274,78.2112389 L250.905916,78.3094969 L266.633067,106.178058 C266.9045,106.659039 266.734629,107.268991 266.253648,107.540424 C265.807023,107.792469 265.249193,107.664002 264.954457,107.259263 L264.891282,107.161005 L249.164131,79.2924439 C248.892697,78.8114632 249.062569,78.2015111 249.54355,77.9300778 Z" id="Line-Copy" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <path d="M191.757766,120.106643 C192.082468,119.713621 192.644519,119.632266 193.063949,119.898745 L193.165616,119.972632 L217.835376,140.354069 C218.261148,140.70583 218.321147,141.336146 217.969386,141.761919 C217.644683,142.15494 217.082632,142.236295 216.663202,141.969816 L216.561536,141.895929 L191.891776,121.514492 C191.466003,121.162731 191.406005,120.532415 191.757766,120.106643 Z" id="Line-Copy-2" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <path d="M146.741873,199.493135 C146.853417,198.992577 147.322148,198.66399 147.820145,198.715782 L147.935437,198.734581 L179.169333,205.694737 C179.708395,205.814862 180.048012,206.349238 179.927887,206.888301 C179.816343,207.388859 179.347611,207.717446 178.849615,207.665654 L178.734323,207.646855 L147.500427,200.686699 C146.961365,200.566575 146.621748,200.032198 146.741873,199.493135 Z" id="Line-Copy-3" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <path d="M192.247342,330.607229 C192.702835,330.294909 193.325272,330.410973 193.637592,330.866466 C193.925888,331.286922 193.84917,331.849625 193.477403,332.179355 L193.378355,332.256717 L166.986554,350.352927 C166.53106,350.665248 165.908624,350.549183 165.596303,350.09369 C165.308007,349.673234 165.384726,349.110532 165.756492,348.780801 L165.85554,348.703439 L192.247342,330.607229 Z" id="Line-Copy-4" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <path d="M484.81915,284.487179 C484.956739,283.993144 485.442025,283.689539 485.936628,283.767323 L486.050778,283.79213 L516.877603,292.377403 C517.40964,292.525576 517.720823,293.076994 517.572651,293.609031 C517.435062,294.103066 516.949777,294.406671 516.455174,294.328887 L516.341023,294.30408 L485.514199,285.718807 C484.982162,285.570634 484.670978,285.019216 484.81915,284.487179 Z" id="Line-Copy-5" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
