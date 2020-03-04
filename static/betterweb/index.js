@@ -39,15 +39,27 @@ let setupSignupListeners = () => {
     });
 }
 
+let enableTabIndexes = (questionElement) => {
+    let as = questionElement.querySelectorAll("a[href]");
+    as.forEach(a => a.removeAttribute("tabindex"));
+}
+
+let disableTabIndexes = (questionElement) => {
+    let as = questionElement.querySelectorAll("a[href]");
+    as.forEach(a => a.setAttribute("tabindex", "-1"));
+}
+
 let expandCollapseParent = (e) => {
     let questionElm = e.target.parentNode.parentNode;
     let isCollapsed = questionElm.classList.contains("collapsed");
     if (isCollapsed) {
         questionElm.classList.remove("collapsed");
         questionElm.classList.add("expanded");
+        enableTabIndexes(questionElm);
     } else {
         questionElm.classList.remove("expanded");
         questionElm.classList.add("collapsed");
+        disableTabIndexes(questionElm);
     }
 }
 
@@ -57,9 +69,11 @@ let expandCollapseQuestion = (elm) => {
     if (isCollapsed) {
         questionElm.classList.remove("collapsed");
         questionElm.classList.add("expanded");
+        enableTabIndexes(questionElm);
     } else {
         questionElm.classList.remove("expanded");
         questionElm.classList.add("collapsed");
+        disableTabIndexes(questionElm);
     }
 }
 
@@ -261,6 +275,11 @@ let setupExpandButtons = () => {
     }
 }
 
+let setupTabIndexes = () => {
+    let as = document.querySelectorAll(".faq.answer a");
+    as.forEach(a => a.setAttribute("tabindex", "-1"));
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     setupExpandButtons();
     setupAnchordLinks();
@@ -268,6 +287,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupDesktopCarousel();
     setupMobileCarousel();
     setupSignupListeners();
+    setupTabIndexes()
 });
 
 
