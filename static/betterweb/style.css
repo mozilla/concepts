@@ -541,7 +541,7 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 
-  h1,
+h1,
 h2,
 h3,
 h4,
@@ -561,6 +561,14 @@ a {
   font-family: "Metropolis", sans-serif;
   font-weight: 600;
   text-decoration: none; }
+
+button:focus {
+  outline: 1px dotted white;
+}
+
+input[type="email"]:focus {
+  border: 3px solid blue;
+}
 
 main {
   font-size: 25px;
@@ -1482,7 +1490,7 @@ section.brands p {
   }
 
   .mobile .brand-logos {
-    width: 100%;
+      width: 100%;
     display: grid;
     overflow: hidden;
   }
@@ -1605,6 +1613,7 @@ section.brands p {
     min-width: 32px;
     min-height: 32px;
     cursor: pointer;
+    border: none;
   }
 
   .brand-arrow.left {
@@ -1661,11 +1670,16 @@ section.brands p {
   .question-header button {
     background: url("images/arrowhead-down.svg") no-repeat center;
     border: none;
-    width: 32px;
+    flex-shrink: 0;
+    width: 48px;
     height: 32px;
     cursor: pointer;
-    rotate: 0deg;
-  }
+    transform: rotate(0deg); }
+    @media (max-width: 675px) {
+      .question-header button {
+        background-size: contain;
+        width: 16px;
+        height: 32px; }}
 
   .faq.question {
     padding: 41px 64px 37px 64px;
@@ -1700,7 +1714,7 @@ section.brands p {
   }
 
   .faq.question.faq.question.expanded .question-header button {
-    rotate: 180deg;
+    transform: rotate(180deg);
   }
 
   /* .faq.question.collapsed {

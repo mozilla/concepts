@@ -164,16 +164,15 @@ let setupDesktopCarousel = () => {
     rightArrow.addEventListener("click", () => arrowClick(false));
 }
 
-function detectswipe(el, func) {
+function detectswipe(ele, func) {
     // from https://stackoverflow.com/questions/15084675/how-to-implement-swipe-gestures-for-mobile-devices
     swipe_det = new Object();
     swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
-    var min_x = 30;  //min x swipe for horizontal swipe
-    var max_x = 30;  //max x difference for vertical swipe
-    var min_y = 50;  //min y swipe for vertical swipe
-    var max_y = 60;  //max y difference for horizontal swipe
-    var direc = "";
-    ele = el;
+    const min_x = 30;  //min x swipe for horizontal swipe
+    const max_x = 30;  //max x difference for vertical swipe
+    const min_y = 50;  //min y swipe for vertical swipe
+    const max_y = 60;  //max y difference for horizontal swipe
+    let direc = "";
     ele.addEventListener('touchstart', (e) => {
       let t = e.touches[0];
       swipe_det.sX = t.screenX; 
@@ -189,13 +188,14 @@ function detectswipe(el, func) {
 
     ele.addEventListener('touchend',function(e){
       //horizontal detection
-      if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y) && (swipe_det.eX > 0)))) {
+      direc = "";
+      if ((Math.abs(swipe_det.eX - swipe_det.sX) > min_x) && (Math.abs(swipe_det.eY - swipe_det.sY) < max_y) && (swipe_det.eX > 0)) {
         if(swipe_det.eX > swipe_det.sX) direc = "r";
         else direc = "l";
       }
   
-      if (direc != "") {
-        if(typeof func == 'function') func(el, direc);
+      if (direc !== "") {
+        if(typeof func == 'function') func(ele, direc);
       }
       direc = "";
       swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
@@ -280,6 +280,15 @@ let setupTabIndexes = () => {
     as.forEach(a => a.setAttribute("tabindex", "-1"));
 }
 
+let setupVideoLoop = () => {
+    let video = document.querySelector(".hero-animation video");
+    //this did the trick
+    video.loop = false; 
+    video.addEventListener('ended', () => { 
+      video.currentTime=0.1; video.play(); }, false);
+    video.play();
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     setupExpandButtons();
     setupAnchordLinks();
@@ -287,7 +296,8 @@ window.addEventListener("DOMContentLoaded", () => {
     setupDesktopCarousel();
     setupMobileCarousel();
     setupSignupListeners();
-    setupTabIndexes()
+    setupTabIndexes();
+    setupVideoLoop();
 });
 
 

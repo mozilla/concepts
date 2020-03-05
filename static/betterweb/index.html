@@ -6,6 +6,7 @@
             href="favicon.png">
         <meta charset="UTF-8">
         <meta name=”robots” content=”noindex,nofollow”>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="fx-bento.css" />
         <title>Firefox Better Web</title>
@@ -51,8 +52,9 @@
                         </div>
                     </div>
                     <div class="hero-animation">
-                        <video autoplay="autoplay" loop width="100%">
+                        <video autoplay muted loop width="100%" preload="true" playsinline onloadeddata="this.play();">
                             <source src="images/hero-anim-before-after.mp4" type="video/mp4">
+                                Your browser does not support the video tag or the file format of this video.
                         </video> 
                     </div>
                     <div class="sign-up-form-price small">
@@ -128,7 +130,7 @@
                             <p>More sites are being added every month. You can listen to audio, view your reading activity, and sync across devices.  <a tabindex="0" href="#what-are-reading-faq" class="faq-link" data-anchor-id="what-are-reading-faq">Learn more</a></p>
                         </div>
                         <div class="brands-mid desktop">
-                            <div class="brand-arrow left" tabindex="0"></div>
+                            <button class="brand-arrow left" tabindex="0"></button>
                             <div class="brand-logos">
                                 <div class="brand-logos-page page1">
                                     <div class="row1 brand-row">
@@ -171,7 +173,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="brand-arrow right" tabindex="0"></div>
+                            <button class="brand-arrow right" tabindex="0"></button>
                         </div>
                         <div class="brands-mid mobile">
                             <div class="brand-logos">
