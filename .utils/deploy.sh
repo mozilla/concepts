@@ -114,6 +114,7 @@ for fn in $(find ${ARTIFACTS} -name 'index.html' -not -path '${ARTIFACTS}/index.
     --include "*.html" \
     --metadata "{${CSP//$'\n'/ }, ${HSTS}, ${TYPE}, ${XSS}}" \
     --metadata-directive "REPLACE" \
+    --website-redirect "/${s3path}/"  \
     --acl "public-read" \
     $fn s3://${CONCEPTS_BUCKET}/${s3path}
 done
