@@ -1342,19 +1342,33 @@ header {
     color: var(--white-80);
     font-size: 18px;
     line-height: 34px;
-    text-align: left; }
+    text-align: left; 
+    flex-direction: column; }
     @media(max-width: 1000px) {
       .mission {
         text-align: center;
         font-size: 16px;
         line-height: 24px;}}
 
-
   @media(max-width: 1000px) {
     .mission.text-block {
       flex-direction: column;
-      margin-top: 60px;
+      margin-top: 60px; }}
+
+  @media(max-width: 675px) {
+    .mission.text-block {
+      padding: 0 16px;
     }}
+
+  .mission-div {
+    display: flex;
+    flex-direction: row; }
+    @media (max-width: 1000px) {
+      .mission-top {
+        flex-direction: column; }
+      .mission-bottom {
+        flex-direction: column-reverse;
+        padding: 58px 0px 0px 0px; }}
 
   .mission-text {
     display: flex;
@@ -1368,30 +1382,37 @@ header {
     line-height: 35px;
     color: var(--white); }
     @media(max-width: 675px) {
-      h2 {
+      .mission h2 {
         text-align: center;
         font-size: 20px;
         line-height: 24px;
         text-align: center;}}
   
-
   .mission p {
-    margin-top: 30px;
-  }
-
+    margin-top: 30px; }
+    @media(max-width: 675px) {
+      .mission p {
+        margin-top: 12px; }}
 
   .mission .mission-chart-wrapper {
-    padding: 0px 0px 0px 32px;
     display: flex;
     flex: 1;
     justify-content: center;}
     @media(max-width: 1000px) {
-      .mission .mission-chart-wrapper {
+      .mission-top div.mission-chart-wrapper, .mission-bottom div.mission-chart-wrapper {
         margin-top: 26px; 
         padding: 0 56px;}}
       @media(max-width: 675px) {
-        .mission .mission-chart-wrapper {
+        .mission-top div.mission-chart-wrapper, .mission-bottom div.mission-chart-wrapper {
           padding: 0 16px; }}
+
+    .mission-top .mission-chart-wrapper {
+      padding: 0px 0px 0px 32px;
+    }
+
+    .mission-bottom .mission-chart-wrapper {
+      padding: 0px 32px 0px 0px;
+    }
 
   .mission-chart {
     max-width: 510px;
@@ -1689,7 +1710,8 @@ section.brands p {
     border-radius: 8px;
     box-shadow: 0 2 4 rgba(0, 0, 0, 0.5);
     margin-bottom: 24px;
-    overflow: hidden;}
+    overflow: hidden;
+    cursor: pointer;}
     @media (max-width: 675px){
       .faq.question {
         padding: 24px 24px; }}

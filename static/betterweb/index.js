@@ -180,7 +180,6 @@ function detectswipe(ele, func) {
     },false);
 
     ele.addEventListener('touchmove', (e) => {
-      e.preventDefault();
       let t = e.touches[0];
       swipe_det.eX = t.screenX; 
       swipe_det.eY = t.screenY;    
@@ -289,6 +288,11 @@ let setupVideoLoop = () => {
     video.play();
 }
 
+let emptyEmailField = () => {
+    let emailElms = document.querySelectorAll("input[type='email']");
+    emailElms.forEach(e => {e.value = "";});
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     setupExpandButtons();
     setupAnchordLinks();
@@ -298,6 +302,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupSignupListeners();
     setupTabIndexes();
     setupVideoLoop();
+    emptyEmailField();
 });
 
 
