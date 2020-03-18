@@ -83,7 +83,7 @@ let setupAnchordLinks = () => {
         elm.addEventListener("click", () => {
             let anchorId = elm.getAttribute("data-anchor-id");
             let anchorElm = document.getElementById(anchorId);
-            let questionElm = anchorElm.parentNode.parentNode.parentNode;
+            let questionElm = anchorElm.nextElementSibling;
             let isCollapsed = questionElm.classList.contains("collapsed");
             if (isCollapsed) {
                 questionElm.classList.remove("collapsed");
@@ -264,14 +264,14 @@ let setupExpandButtons = () => {
         return mq(query);
     }
 
-    if (!isTouchDevice()) {
-        document.querySelectorAll(".question-header button").forEach(button => button.addEventListener("click", expandCollapseParent));
-    } else {
-        document.querySelectorAll(".faq.question").forEach(elm => elm.addEventListener("click", (e) => {
-            if (e.currentTarget === elm)
-                expandCollapseQuestion(elm);
-        }));
-    }
+    // if (!isTouchDevice()) {
+    //     document.querySelectorAll(".question-header button").forEach(button => button.addEventListener("click", expandCollapseParent));
+    // } else {
+    document.querySelectorAll(".faq.question").forEach(elm => elm.addEventListener("click", (e) => {
+        if (e.currentTarget === elm)
+            expandCollapseQuestion(elm);
+    }));
+    // }
 }
 
 let setupTabIndexes = () => {
@@ -293,6 +293,12 @@ let emptyEmailField = () => {
     emailElms.forEach(e => {e.value = "";});
 }
 
+let checkforCustomElementSupport = () => {
+    if (!('customElements' in window)) {
+        document.querySelector('firefox-apps').style = 'display: none';
+    }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     setupExpandButtons();
     setupAnchordLinks();
@@ -303,6 +309,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupTabIndexes();
     setupVideoLoop();
     emptyEmailField();
+    checkforCustomElementSupport();
 });
 
 

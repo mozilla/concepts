@@ -1107,6 +1107,7 @@ header {
 
   .form-container form {
       display: flex;
+      max-width: 500px;
   }
 
   .form-container form * {
@@ -1159,6 +1160,11 @@ header {
     @media(max-width: 675px) {
       .small .form-container form {
         flex-direction: column;}}
+
+  @media(min-width: 675px) {
+    form.middle-form {
+      width: 500px; }
+    }
 
   .hero-animation {
     flex: 1;
@@ -1404,7 +1410,7 @@ header {
         padding: 0 56px;}}
       @media(max-width: 675px) {
         .mission-top div.mission-chart-wrapper, .mission-bottom div.mission-chart-wrapper {
-          padding: 0 16px; }}
+          padding: 0; }}
 
     .mission-top .mission-chart-wrapper {
       padding: 0px 0px 0px 32px;
@@ -1519,7 +1525,7 @@ section.brands p {
   .desktop .brand-logos .brand-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-bottom: 32px; }
     @media (max-width: 1000px) {
       .desktop .brand-logos .brand-row {
@@ -1790,7 +1796,8 @@ section.brands p {
 
   footer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
     padding-bottom: 40px; }
     @media (max-width: 675px) {
       footer {
@@ -1844,6 +1851,6 @@ section.brands p {
     a.anchor {
       display: block;
       position: relative;
-      top: -150px;
+      top: -96px;
       visibility: hidden;
     }
