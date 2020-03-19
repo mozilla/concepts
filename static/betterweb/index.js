@@ -324,12 +324,15 @@ let checkforCustomElementSupport = () => {
 }
 
 let activateNonregionModal = () => {
+    if (window.localStorage && localStorage.getItem("modal-shown")  === "true") return; 
+
     if (detectMob()) {
         // change the dialog to the mobile version
         let deskP = document.querySelector(".modal-content p.desktop");
         let mobP = document.querySelector(".modal-content p.mobile");
         deskP.classList.add("hidden");
         mobP.classList.remove("hidden");
+        if (window.localStorage) localStorage.setItem("modal-shown", "true");
     }
     
     document.querySelector('.overlay-container').classList.remove('hidden');
@@ -347,7 +350,11 @@ let checkRegion = () => {
     };
 
     let isNonregion = getQueryParams('nonregion', window.location.href);
-    if (isNonregion) activateNonregionModal();
+    let isClearCache = getQueryParams('clearcache', window.location.href);
+    if (isNonregion || detectMob()) activateNonregionModal();
+    if (window.localStorage && isClearCache) {
+        window.localStorage.clear();
+    }
 
     function foo(data)
     {
