@@ -7,9 +7,17 @@
         <meta charset="UTF-8">
         <meta name=”robots” content=”noindex,nofollow”>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta name="description" content="Join Firefox and our trusted partner, Scroll, as we reinvent the internet by rewarding quality and privacy -- not ads." />
+        <meta property="og:title" content="Firefox Better Web with Scroll" />
+        <meta property="og:description" content="Join Firefox and our trusted partner, Scroll, as we reinvent the internet by rewarding quality and privacy -- not ads." />
+        <meta property="og:url" content="https://firstlook.firefox.com/betterweb/" />
+        <meta property="og:image" content="https://firstlook.firefox.com/betterweb/favicon.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Firefox Better Web with Scroll" />
+        <meta name="twitter:description" content="Join Firefox and our trusted partner, Scroll, as we reinvent the internet by rewarding quality and privacy -- not ads." />
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="fx-bento.css" />
-        <title>Firefox Better Web</title>
+        <title>Firefox Better Web with Scroll</title>
         <script src="index.js"></script>
         <script src="fx-bento.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -24,6 +32,18 @@
     </head>
     <body>
         <div class="page-container landing-page">
+            <div class="overlay-container nonregion-modal hidden">
+                <div class="modal-content">
+                    <div class="close-bar"><img id="cross-dismiss" src="images/close.svg" alt="close button" /></div>
+                    <div class="inner-frame">
+                        <img class="modal-logo" src="images/header-logo-small.png" />
+                        <h2>Firefox Better Web with Scroll</h2>
+                        <p class="desktop">Firefox Better Web with Scroll is currently available to US desktop usersonly, as we are currently testing the product. <a href="https://qsurvey.mozilla.com/s3/firefox-betterweb-w-scroll-signup">Join the waitlist</a> to be notified when other regions become available.</p>
+                        <p class="mobile hidden">This extension is available on Firefox for desktop. You can access Scroll features, however, across devices, browsers, and apps.</p>
+                        <button id="ok-dismiss">Okay</button>
+                    </div>
+                </div>
+            </div>
             <header>
                 <div class = "header-wrapper">
                     <div class="fcn-logo">
@@ -41,10 +61,9 @@
                 <section class="hero text-block">
                     <div class="hero-text">
                         <h1>Test drive a cleaner, faster, better web.</h1>
-                        <p class="description">Firefox Better Web is the fastest, most private enhancement to Firefox yet combined with Scroll’s growing network of ad-free sites where your membership
-                             funds the sites you love. Ready for the web to feel magical again?</p>
+                        <p class="description">Join Firefox and our trusted partner, Scroll, as we reinvent the internet by rewarding quality and privacy -- not ads.</p>
                         <div class="sign-up-form-price large">
-                            <p class="price">$2.49/month for the next six months. Try it risk-free for 48 hours.</p>
+                            <p class="price">Starting at $2.49/month. That’s 50% off for the next six months. Try it risk free for 48 hours.</p>
                             <div class="form-container" class="top-form-desktop">
                                 <form>
                                     <input tabindex="0" type="email" placeholder="Enter email address" id="hero-email-desktop" /><button tabindex="0" class="get-fcn cta signup-btn" data-email-id="hero-email-desktop">Sign up</button>
@@ -60,7 +79,7 @@
                         </video> 
                     </div>
                     <div class="sign-up-form-price small">
-                        <p class="price">$2.49/month for the next six months. Try it risk-free for 48 hours.</p>
+                        <p class="price">Starting at $2.49/month. That’s 50% off for the next six months. Try it risk free for 48 hours.</p>
                         <div class="form-container">
                             <form class="top-form-mobile">
                                 <input type="email" placeholder="Enter email address" id="hero-email-mobile" /><button tabindex="0" class="get-fcn cta signup-btn" data-email-id="hero-email-mobile">Sign up </button>
@@ -70,25 +89,25 @@
                 </section>
                 <div class="features-wrapper">
                     <section class="features">
-                        <div class="feature performance">
-                            <h3>Performance</h3>
-                            <p>No trackers means almost no ads and 20-100% faster page loads, and increased security.
-                            </p>
+                        <div class="feature a-better-web">
+                            <h3>A better web</h3>
+                            <p>Firefox and Scroll are partnering to <a href="#mission-top" tabindex="0">disrupt the current ad-revenue model</a> by directly funding partner sites.</p>
                         </div>
                         <div class="feature clean-reading">
                             <h3>Clean reading</h3>
-                            <p>Say good-bye to most pop-ups, banner ads, in-article ads, and annoying auto-play video ads.</p>
+                            <p>Our partner, Scroll, enables an ad-free experience on a growing network of partner sites.</p>
                         </div>
-                        <div class="feature a-better-web">
-                            <h3>A better web</h3>
-                            <p>Your reading activity funds partner sites... disrupting the current ad-revenue model.</p>
+                        <div class="feature performance">
+                            <h3>Performance</h3>
+                            <p>Less trackers means up to 20-100% faster page loads, and increased security.</p>
                         </div>
+                        
                     </section>
                 </div>
                 
                 <section class="get-fcn">
                     <h1> Try it for yourself </h1>
-                    <p>Try it risk-free for 48 hours. Cancel anytime.</p>
+                    <p>Firefox Better Web is in beta. By trying it, you’re helping Firefox and Scroll innovate to create a better internet. <a class="learn-more faq-link" tabindex="0" href="#what-exactly-faq" data-anchor-id="what-exactly-faq">Learn more.</a></p>
                     <div class="plan">
                         <div class="plan-wrapper">
                             <h5>$2.49 for your first six months</h5>
@@ -107,7 +126,7 @@
                         <div class="text-block">
                             <h2>How it works across browsers and devices</h2>
                             <div class="description">
-                                <p>Firefox Better Web <a tabindex="0" href="#what-is-tracker-faq" class="faq-link" data-anchor-id="what-is-tracker-faq">blocks trackers</a> and improves performance on your Firefox desktop browser.  Additionally, you can access an ad-free experience across Scroll partner sites on any browser or device.</p>
+                                <p>Firefox Better Web gives you access to an ad-free experience across Scroll partner sites on any browser or device. Additionally, it <a tabindex="0" href="#what-is-tracker-faq" class="faq-link" data-anchor-id="what-is-tracker-faq">blocks trackers</a> and improves performance on your Firefox desktop browser.</p>
                                 <p class="how-this-works"> <a tabindex="0" href="#work-on-all-faq" class="faq-link" data-anchor-id="work-on-all-faq">How does this work?</a> </p>
                             </div>
                             <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"><button class="download-fx">Download Firefox</button></a>
@@ -115,7 +134,8 @@
                     </section>
                 </div>
                 <section class="mission text-block">
-                    <div class="mission-top mission-div">
+                    <a id="mission-top" class="anchor"></a>
+                    <div class="mission-top mission-div" id="mission-top">
                         <div class="mission-text">
                             <h2>Your engagement funds partner sites...</h2>
                             <p>Your Firefox Better Web subscription helps fund <a tabindex="0" href="#work-on-all-faq" class="faq-link" data-anchor-id="work-on-all-faq">partner sites</a> based on the time you spend.</p>
@@ -132,7 +152,7 @@
                         </div>
                         <div class="mission-text">
                             <h2>... and builds a better web.</h2>
-                            <p>Since partner sites make <a tabindex="0" href="#will-paid-less" class="faq-link" data-anchor-id="will-paid-less">more money</a> with Firefox Better Web, you are helping to build an Internet focused on quality rather than ads.</p>
+                            <p>Partner sites make <a tabindex="0" href="#will-paid-less" class="faq-link" data-anchor-id="will-paid-less">more money</a> with Firefox Better Web than they do showing ads. They’re also paid based on time spent rather than clicks. This encourages higher quality and more engaging content. Your subscription helps build an Internet focused on quality rather than ads.</p>
                         </div>
                     </div>
 
@@ -236,13 +256,13 @@
                             </div>
                         </div>
                         <div class="brands-bottom desktop">
-                            <div class="pagination-btn selected btn1"></div>
-                            <div class="pagination-btn btn2"></div>
+                            <div class="pagination-btn selected btn1" data-page="1"></div>
+                            <div class="pagination-btn btn2" data-page="2"></div>
                         </div>
                         <div class="brands-bottom mobile">
-                            <div class="pagination-btn selected btn1"></div>
-                            <div class="pagination-btn btn2"></div>
-                            <div class="pagination-btn btn3"></div>
+                            <div class="pagination-btn selected btn1" data-page="1"></div>
+                            <div class="pagination-btn btn2" data-page="2"></div>
+                            <div class="pagination-btn btn3" data-page="3"></div>
                         </div>
                     </section>
                 </div>
@@ -258,13 +278,13 @@
                                     <button></button>
                                 </div>
                                 <div class="faq answer">
-                                    <p>Firefox Better Web is a desktop extension. It combines:</p><br>
+                                    <p>Firefox Better Web is an initiative to bring back the joy in browsing the web. It combines Scroll and Firefox Enhanced Tracking Protection:</p><br>
 
-                                    <p>1) Firefox <a tabindex="-1" href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop?as=u&utm_source=fbwlanding" target="_blank">Enhanced Tracking Protection</a> (ETP) technology is used to block ads, trackers, fingerprinters&mdash;in other words, you get a mostly ad-free experience while being protected online. ETP works only on the Firefox desktop browser.</p><br>
+                                    <p>1) Scroll collaborates with partner sites in its network to create ad-free versions of their content. It also offers audio for articles within the partner network, and measures your reading activity across devices and apps so that you can refer to your history and see how your reading activity directly benefits the partner sites you patronize. Scroll pays its partner sites based on reading activity, and this amounts to over 40% more than what they would have received through ad revenue.</p><br />
 
-                                    <p>2) Scroll collaborates with publishers in its network to create ad-free versions of their content. It also offers audio for articles within the publisher network, and it keeps track of your reading activity across devices and apps so that you can refer to your history and see how your reading activity directly benefits the publishers you patronize. Scroll pays its publishers based on reading activity, and this amounts to over 40% more than what they would have received through ad revenue.</p><br>
+                                    <p>2) Firefox <a tabindex="-1" href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop?as=u&utm_source=fbwlanding" target="_blank">Enhanced Tracking Protection</a> (ETP) technology is set to block trackers, cryptominers, and fingerprinters, giving you increased performance while being protected online. The Firefox Better Web extension works only on the Firefox desktop browser.</p><br>
 
-                                    <p>All of this supports the possibility of an Internet that&rsquo;s not dominated by ads and ad-driven revenue. It leads the way to quality online content that you&rsquo;re able to find quickly. It paves the way toward a fast, clean, and private online experience&mdash;for all.</p>
+                                    <p>All of this supports the possibility of an Internet that’s not dominated by ads and ad-driven revenue. It paves the way toward quality online content and a fast, clean, and private online experience—for all.</p>
                                 </div>
                             </div>
                             <a id="what-is-tracker-faq" class="anchor"></a>
@@ -274,24 +294,13 @@
                                     <button></button>
                                 </div>
                                 <div class="faq answer">
-                                    <p>A tracker is something that companies place into websites to gather very detailed information about you, often without you realizing it. That information could include your exact location at the moment, your financial situation, health concerns, and much more.</p><br>
+                                    <p>A tracker is something that companies place into websites that can gather very detailed information about you, often without you realizing it. That information could include your exact location at the moment, your financial situation, health concerns, and much more.</p><br>
     
-                                    <p>Companies sell the extensive data that trackers collect about you to others that might want to influence your behavior. For example, they might want you to purchase their products, to influence your political beliefs, or to show you a higher airline ticket price than your neighbor.</p><br>
+                                    <p>Some companies sell the extensive data that trackers collect about you to others that might want to influence your behavior. For example, they might want you to purchase their products, influence your political beliefs, or manipulate you into changing your behavior.</p><br>
     
                                     <p>This mass collection of personal information on the Internet greatly increases the risk that your data will be misused or leaked, and that organizations you have never even heard of will know startlingly intimate details about you and your family.</p><br>
     
-                                    <p>By default, Firefox has Enhanced Tracking Protection (ETP) built in to automatically prevent the collection of your personal data without your consent. It blocks a wide range of trackers, from common &ldquo;everyday&rdquo; trackers to more sophisticated data mining techniques. <a href="https://blog.mozilla.org/firefox/how-to-stop-web-trackers/" target="_blank">Read more about online tracking</a> in this Mozilla article, &ldquo;What you need to know about online tracking (and how to stop it).&rdquo;</p>
-                                </div>
-                            </div>
-                            
-                            <a id="what-is-blocked-faq" class="anchor"></a>
-                            <div class="faq question collapsed">
-                                <div class="question-header">
-                                    <h4>What do you mean by blocks &ldquo;most ads&rdquo;? Which ads are not blocked, and why?</h4>
-                                    <button></button>
-                                </div>
-                                <div class="faq answer">
-                                    <p>Firefox&rsquo;s ETP technology blocks ads from any identified tracking domains. It is possible that some ads will still be shown if the sites they&rsquo;re on have not been identified as a tracking site. Firefox uses <a tabindex="-1" href="https://disconnect.me/trackerprotection" target="_blank">Disconnect&rsquo;s tracking protections lists</a> as a guide; ETP blocks ads from the domains on these lists, with the exception of their content list.</p>
+                                    <p>Firefox Better Web uses Firefox’s built in Enhanced Tracking Protection (ETP) technology to automatically limit collection of your personal data without your consent. It blocks a wide range of trackers, from common “everyday” trackers to more sophisticated data mining techniques. <a href="https://blog.mozilla.org/firefox/how-to-stop-web-trackers/" target="_blank">Read more about online tracking</a> and how Firefox can help you.</p>
                                 </div>
                             </div>
 
@@ -302,9 +311,9 @@
                                     <button></button>
                                 </div>
                                 <div class="faq answer">
-                                    <p>Firefox Better Web is in beta, which means that the product is not fully developed and scaled. During this stage, we intend to learn better about whether and how to develop Firefox Better Web into a full-fledged product.</p><br>
+                                    <p>The Firefox Better Web initiative is still in beta, which means that the product is not fully developed and scaled. During this stage, we intend to learn more about whether and how to develop Firefox Better Web into a full-fledged product.</p><br>
 
-                                    <p>We need to confirm that Firefox Better Web can address a complex, pervasive problem that all users experience: The current ad revenue model de-incentivizes quality content creation while creating a hostile experience for users. Through the beta, we intend to learn from you about how to better deliver the web experience you want. We&rsquo;ll also confirm that we&rsquo;re enabling partner sites to create more quality content.</p><br>
+                                    <p>Through the beta, we intend to learn from you about how to better deliver the web experience you want. We’ll also confirm that we’re enabling partner sites to create more quality content.</p><br>
 
                                     <p>You can help us do all this by signing up for the beta and giving us feedback through surveys.</p><br>
                                 </div>
@@ -319,28 +328,13 @@
                                     <button></button>
                                 </div>
                                 <div class="faq answer">
-                                    <p>Firefox Better Web works on all websites when you&rsquo;re on the Firefox desktop browser. The Scroll-specific features&mdash;syncing, audio, and reading lists, as well as publisher direct payout&mdash;work only on partner publisher sites. To use Scroll features on all your browsers, devices and apps, use set-up links or download the Scroll app, depending on where you read. Learn more about <a tabindex="-1" href="https://scroll.com/setup" target="_blank">Scroll set-up.</a></p>
+                                    <p>Firefox Better Web works on all websites when you&rsquo;re on the Firefox desktop browser. The Scroll-specific features&mdash;syncing, audio, and reading lists, as well as publisher direct payout&mdash;work only on partner publisher sites. To use Scroll features on all your browsers, devices and apps, use set-up links or download the Scroll app, depending on where you read. <a tabindex="-1" href="https://scroll.com/setup" target="_blank">Learn more about Scroll set-up.</a></p>
                                 </div>
                             </div>
-                            <a id="what-are-reading-faq" class="anchor"></a>
+                            <a id="work-with-current-faq" class="anchor"></a>
                             <div class="faq question collapsed">
                                 <div class="question-header">
-                                    <h4>What are the reading tools and how do I use them?</h4>
-                                    <button></button>
-                                </div>
-                                <div class="faq answer">
-                                    <p>Reading tools include audio for articles, saving articles to your reading list, and syncing your activity across devices, apps, and browsers.</p><br>
-
-                                    <p>Audio for articles: When you&rsquo;re on an article page within one of our partner sites, you&rsquo;ll see the Scroll bar at the bottom of your page. Just press the audio icon and audio will begin or resume.</p><br>
-
-                                    <p>Saving articles: When you&rsquo;re on an article page within one of our partner sites, just go to article > click Scroll icon > click bookmark icon. You can quickly access your reading list within your Scroll apps, or just by going to scroll.com when you&rsquo;re signed in.</p><br>
-
-                                    <p>Syncing your activity: Your reading and listening activity is automatically synced across any devices, apps, and browsers that you&rsquo;ve signed into.</p>
-                                </div>
-                            </div>
-                            <div class="faq question collapsed">
-                                <div class="question-header">
-                                    <h4><a id="work-with-current-faq" class="anchor"></a>Will Firefox Better Web work with my current ad-blocker?</h4>
+                                    <h4>Will Firefox Better Web work with my current ad-blocker?</h4>
                                     <button></button>
                                 </div>
                                 <div class="faq answer">
@@ -388,11 +382,11 @@
                             <a id="reading-subscription" class="anchor"></a>
                             <div class="faq question collapsed">
                                 <div class="question-header">
-                                    <h4>Do I get a reading subscription to the publisher network?</h4>
+                                    <h4>Does Firefox Better Web include access to subscriber-only articles on partner sites?</h4>
                                     <button></button>
                                 </div>
                                 <div class="faq answer">
-                                    <p>No, Firefox Better Web does not include subscriptions to any sites within the publisher network.</p>
+                                    <p>No. Firefox Better Web will not work for articles or content behind a paywall, unless you already have subscriptions to those sites.</p>
                                 </div>
                             </div>
                         </div>
@@ -405,7 +399,7 @@
                                     <button></button>
                                 </div>
                                 <div class="faq answer">
-                                    <p>Scroll does work with a browser&rsquo;s privacy settings, but sometimes you may need to <a tabindex="-1" href="https://intercom.help/scroll/en/articles/3344890-does-scroll-work-with-my-browser-s-privacy-settings" target="_blank">manually allow &ldquo;third-party cookies&rdquo; from Scroll</a>. Cookies from Scroll are used to give you the ad-free experience on partner site and to allocate your money to the sites you visit. Data is only collected on partner sites and when the scroll bar is present.</p>
+                                    <p>Scroll does work with a browser&rsquo;s privacy settings, but for some browsers you may need to <a tabindex="-1" href="https://intercom.help/scroll/en/articles/3344890-does-scroll-work-with-my-browser-s-privacy-settings" target="_blank">manually allow &ldquo;third-party cookies&rdquo; from Scroll</a>. Cookies from Scroll are used to give you the ad-free experience on partner sites and to allocate your money to the sites you visit. Data is only collected when you are logged into Scroll and visit partner sites.</p>
                                 </div>
                             </div>
 
@@ -418,7 +412,7 @@
                                 <div class="faq answer">
                                     <p>No, neither Firefox nor Scroll sell your data.</p><br>
 
-                                    <p>While using Firefox Better Web you are protected by the <a href="https://blog.mozilla.org/firefox/firefox-data-privacy-promise/" target="_blank">Firefox Personal Data Promise</a>, except when you are on Scroll publisher network sites. Scroll measures the engaged time spent with that site to calculate how much that site should earn each month. All collected data collected by Scroll can be managed on scroll.com. You can read about how Scroll looks after your personal data in the <a tabindex="-1" href="https://scroll.com/privacy" target="_blank">Scroll Privacy Policy</a>.</p>
+                                    <p>Scroll's Privacy Policy protects you when you are on Scroll partner sites. On any other sites you visit while using Firefox, you are protected by the <a href="https://blog.mozilla.org/firefox/firefox-data-privacy-promise/" target="_blank">Firefox Personal Data Promise</a>. Scroll measures your engaged time spent on partner sites to calculate how much they should earn each month. You can manage the data collected by Scroll on scroll.com and learn about how Scroll looks after your personal data in the <a tabindex="-1" href="https://scroll.com/privacy" target="_blank">Scroll Privacy Policy</a>.</p>
                                 </div>
                             </div>
                         </div>

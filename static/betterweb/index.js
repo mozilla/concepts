@@ -6,6 +6,22 @@ window.addEventListener("scroll", () => {
     }
 });
 
+let detectMob = () => {
+    const toMatch = [
+            /Android/i,
+            /webOS/i,
+            /iPhone/i,
+            /iPad/i,
+            /iPod/i,
+            /BlackBerry/i,
+            /Windows Phone/i
+        ];
+
+    return toMatch.some((toMatchItem) => {
+        return window.navigator.userAgent.match(toMatchItem);
+    });
+}
+
 let signup = (email) => {
     const SIGN_UP_URL_BASE = "https://scroll.com/firefoxauth";
     let url;
@@ -95,29 +111,37 @@ let setupAnchordLinks = () => {
 
 let hideDownloadButton = () => {
 // https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
-    function detectMob() {
-        const toMatch = [
-                /Android/i,
-                /webOS/i,
-                /iPhone/i,
-                /iPad/i,
-                /iPod/i,
-                /BlackBerry/i,
-                /Windows Phone/i
-            ];
-
-        return toMatch.some((toMatchItem) => {
-            return window.navigator.userAgent.match(toMatchItem);
-        });
-    }
-
     function detectFirefox() {
         return window.navigator.userAgent.indexOf("Firefox") != -1;
     }
 
     if (detectMob() || detectFirefox()) {
         document.querySelector(".download-fx").classList.add("hidden");
+        document.querySelector(".download-fx").setAttribute("tabindex", "-1");
     }
+}
+
+let setupPaginationBtns = () => {
+    let btns = document.querySelectorAll(".mobile .pagination-btn");
+
+    function switchPage(page) {
+        let pages = document.querySelectorAll(".mobile .brand-logos-page");
+
+        for (let i of [0, 1, 2]) {
+            if (page == i+1) {
+                btns[i].classList.add("selected");
+                pages[i].classList.remove("inactive");
+            } else {
+                btns[i].classList.remove("selected");
+                pages[i].classList.add("inactive");
+            }
+        }
+    }
+
+    btns.forEach(btn => btn.addEventListener("click", (e) => {
+        let p = e.target.dataset.page; 
+        switchPage(p);
+    }));
 }
 
 let setupDesktopCarousel = () => {
@@ -268,7 +292,7 @@ let setupExpandButtons = () => {
     //     document.querySelectorAll(".question-header button").forEach(button => button.addEventListener("click", expandCollapseParent));
     // } else {
     document.querySelectorAll(".faq.question").forEach(elm => elm.addEventListener("click", (e) => {
-        if (e.currentTarget === elm)
+        if (e.currentTarget === elm && !(e.target instanceof HTMLAnchorElement))
             expandCollapseQuestion(elm);
     }));
     // }
@@ -299,17 +323,84 @@ let checkforCustomElementSupport = () => {
     }
 }
 
+let activateNonregionModal = () => {
+    if (detectMob()) {
+        // change the dialog to the mobile version
+        let deskP = document.querySelector(".modal-content p.desktop");
+        let mobP = document.querySelector(".modal-content p.mobile");
+        deskP.classList.add("hidden");
+        mobP.classList.remove("hidden");
+    }
+    
+    document.querySelector('.overlay-container').classList.remove('hidden');
+}
+
+let checkRegion = () => {
+    // https://dev.to/ganeshmani/how-to-get-query-string-parameters-in-javascript-2019-4dm2
+    const getQueryParams = ( params, url ) => {
+  
+        let href = url;
+        //this expression is to get the query strings
+        let reg = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
+        let queryString = reg.exec(href);
+        return queryString ? queryString[1] : null;
+    };
+
+    let isNonregion = getQueryParams('nonregion', window.location.href);
+    if (isNonregion) activateNonregionModal();
+
+    function foo(data)
+    {
+        // do stuff with JSON
+        console.log(data);
+    }
+
+    var script = document.createElement('script');
+    script.src = 'https://www.mozilla.org/country-code.json?callback=foo'
+
+    document.getElementsByTagName('head')[0].appendChild(script);
+
+    const xmlhttp = new XMLHttpRequest();
+    const url = "https://www.mozilla.org/country-code.json";
+
+    xmlhttp.onreadystatechange = () => {
+        if (this.readyState == 4 && this.status == 200) {
+            const response = JSON.parse(this.responseText);
+            const code = reponse["country_code"];
+            alert(code);
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+
+let setupModalDismissBtns = () => {
+    let okBtn = document.getElementById("ok-dismiss");
+    let crossBtn = document.getElementById("cross-dismiss");
+    let overlay = document.querySelector(".overlay-container");
+
+    function hideOverlay() {
+        overlay.classList.add("hidden");
+    }
+
+    okBtn.addEventListener("click", hideOverlay);
+    crossBtn.addEventListener("click", hideOverlay);   
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     setupExpandButtons();
     setupAnchordLinks();
-    hideDownloadButton();
     setupDesktopCarousel();
     setupMobileCarousel();
     setupSignupListeners();
     setupTabIndexes();
     setupVideoLoop();
     emptyEmailField();
+    hideDownloadButton();
     checkforCustomElementSupport();
+    setupPaginationBtns();
+    setupModalDismissBtns();
+    checkRegion();
 });
 
 
