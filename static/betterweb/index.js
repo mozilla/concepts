@@ -127,7 +127,7 @@ let setupPaginationBtns = () => {
     function switchPage(page) {
         let pages = document.querySelectorAll(".mobile .brand-logos-page");
 
-        for (let i of [0, 1, 2]) {
+        for (let i of [0, 1]) {
             if (page == i+1) {
                 btns[i].classList.add("selected");
                 pages[i].classList.remove("inactive");
@@ -142,50 +142,6 @@ let setupPaginationBtns = () => {
         let p = e.target.dataset.page; 
         switchPage(p);
     }));
-}
-
-let setupDesktopCarousel = () => {
-    let leftArrow = document.querySelector(".brand-arrow.left");
-    let rightArrow = document.querySelector(".brand-arrow.right");
-    let logosSection = document.querySelector(".desktop .brand-logos");
-
-    function flipPage() {
-        let page1 = document.querySelector(".desktop .brand-logos-page.page1");
-        let page2 = document.querySelector(".desktop .brand-logos-page.page2");
-        let pagBtn1 = document.querySelector(".desktop .pagination-btn.btn1");
-        let pagBtn2 = document.querySelector(".desktop .pagination-btn.btn2");
-
-        let activePage = pagBtn1.classList.contains("selected") ? 1 : 2;
-        // works if only two pages
-    
-        if (activePage == 1) activePage = 2;
-            else activePage = 1;
-
-        // update the properties
-        if (activePage == 1) {
-            pagBtn1.classList.add("selected");
-            pagBtn2.classList.remove("selected");
-            page1.classList.remove("inactive");
-            page2.classList.add("inactive");
-        } else {
-            pagBtn2.classList.add("selected");
-            pagBtn1.classList.remove("selected");
-            page2.classList.remove("inactive");
-            page1.classList.add("inactive");
-        }
-    }
-
-    function arrowClick(isLeft) {
-        flipPage();
-    }
-
-    // also enablind swipe on mobile phones with high resolution
-    detectswipe(logosSection, (el, d) => {
-        if (d == "r" || d == "l") flipPage();
-    });
-
-    leftArrow.addEventListener("click", () => arrowClick(true));
-    rightArrow.addEventListener("click", () => arrowClick(false));
 }
 
 function detectswipe(ele, func) {
@@ -234,14 +190,14 @@ let setupMobileCarousel = () => {
     function onSwipe(el, d) {
         if (d !== "r" && d != "l") return;
         let activePage;
-        for (let i of [0, 1, 2]) {
+        for (let i of [0, 1]) {
             if (btns[i].classList.contains("selected")) {
                 activePage = i+1;
             }
         }
 
         if (d == "l") {
-            if (activePage == 3){
+            if (activePage == 2){
                 activePage = 1;
             } else {
                 activePage += 1;
@@ -250,13 +206,13 @@ let setupMobileCarousel = () => {
 
         if (d == "r") {
             if (activePage == 1) {
-                activePage = 3;
+                activePage = 2;
             } else {
                 activePage -= 1;
             }
         }
 
-        for (let i of [0, 1, 2]) {
+        for (let i of [0, 1]) {
             if (activePage == i+1) {
                 btns[i].classList.add("selected");
                 pages[i].classList.remove("inactive");
@@ -341,7 +297,6 @@ let activateNonregionModal = () => {
 let checkRegion = () => {
     // https://dev.to/ganeshmani/how-to-get-query-string-parameters-in-javascript-2019-4dm2
     const getQueryParams = ( params, url ) => {
-  
         let href = url;
         //this expression is to get the query strings
         let reg = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
@@ -349,36 +304,32 @@ let checkRegion = () => {
         return queryString ? queryString[1] : null;
     };
 
-    let isNonregion = getQueryParams('nonregion', window.location.href);
-    let isClearCache = getQueryParams('clearcache', window.location.href);
-    if (isNonregion || detectMob()) activateNonregionModal();
+    let nonregionParam = getQueryParams('nonregion', window.location.href);
+    if (nonregionParam && nonregionParam == "false") return;
+
+    let isClearCache = getQueryParams('clearcache', window.location.href) == "true";
+
+    if (nonregionParam == "true" || detectMob()) activateNonregionModal();
     if (window.localStorage && isClearCache) {
         window.localStorage.clear();
     }
 
-    function foo(data)
-    {
-        // do stuff with JSON
-        console.log(data);
-    }
+    const url = "https://location.services.mozilla.com/v1/country?key=efdb6cac-b8d9-452e-bbbe-87481222b36a";
+    function reqListener (e) {
+        try {
+            let response = e.target.response;
+            if (!(detectMob()) && response.country_code != "US"){
+                activateNonregionModal();
+            }
 
-    var script = document.createElement('script');
-    script.src = 'https://www.mozilla.org/country-code.json?callback=foo'
-
-    document.getElementsByTagName('head')[0].appendChild(script);
-
-    const xmlhttp = new XMLHttpRequest();
-    const url = "https://www.mozilla.org/country-code.json";
-
-    xmlhttp.onreadystatechange = () => {
-        if (this.readyState == 4 && this.status == 200) {
-            const response = JSON.parse(this.responseText);
-            const code = reponse["country_code"];
-            alert(code);
-        }
-    };
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
+        } catch (err) {}
+      }
+      
+    let req = new XMLHttpRequest();
+    req.responseType = "json"
+    req.addEventListener("load", reqListener);
+    req.open("GET", url);
+    req.send();
 }
 
 let setupModalDismissBtns = () => {
@@ -397,7 +348,6 @@ let setupModalDismissBtns = () => {
 window.addEventListener("DOMContentLoaded", () => {
     setupExpandButtons();
     setupAnchordLinks();
-    setupDesktopCarousel();
     setupMobileCarousel();
     setupSignupListeners();
     setupTabIndexes();
