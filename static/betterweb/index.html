@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <meta name=”robots” content=”noindex,nofollow”>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://tagmanager.google.com/ https://www.googletagmanager.com/ https://www.google-analytics.com/ 'sha256-6c6154a88bc19fde7574a0f42e203a530afc7cc94de6b408a7748db8919dbfab'; style-src 'self' https://tagmanager.google.com/ https://fonts.googleapis.com/; img-src 'self' data: https://ssl.gstatic.com https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://location.services.mozilla.com; default-src 'self'; form-action 'self' https://scroll.com;">
         <meta name="description" content="Join Firefox and our trusted partner, Scroll, as we reinvent the internet by rewarding quality and privacy -- not ads." />
         <meta property="og:title" content="Firefox Better Web with Scroll" />
         <meta property="og:description" content="Join Firefox and our trusted partner, Scroll, as we reinvent the internet by rewarding quality and privacy -- not ads." />
@@ -22,12 +23,10 @@
         <script src="fx-bento.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159564696-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
+        <script>window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'UA-159564696-1');
-        </script>
+            gtag('config', 'UA-159564696-1');</script>
 
     </head>
     <body>
