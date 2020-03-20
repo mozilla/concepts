@@ -1416,6 +1416,10 @@ header {
     display: none;
   }
 
+  a.download-fx-link.hidden {
+    display: none;
+  }
+
   button.download-fx {
     margin-top: 38px;
     background-color: var(--download-fx-color);
@@ -1579,6 +1583,7 @@ section.brands p {
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-bottom: 100px;
   }
 
   .mobile .brand-logos-page {

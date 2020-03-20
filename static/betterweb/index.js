@@ -117,6 +117,7 @@ let hideDownloadButton = () => {
 
     if (detectMob() || detectFirefox()) {
         document.querySelector(".download-fx").classList.add("hidden");
+        document.querySelector(".download-fx-link").classList.add("hidden");
         document.querySelector(".download-fx").setAttribute("tabindex", "-1");
     }
 }
