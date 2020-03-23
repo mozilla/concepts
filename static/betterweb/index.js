@@ -6,6 +6,18 @@ window.addEventListener("scroll", () => {
     }
 });
 
+let getQueryParams = () => {
+    const params = new URLSearchParams(window.location.search);
+
+    let utm_campaign = params.get('utm_campaign');
+    let utm_medium = params.get('utm_medium');
+    let utm_source = params.get('utm_source');
+    let utm_content = params.get('utm_content');
+    let debug = params.get('debug');
+
+    return {utm_campaign, utm_medium, utm_source, utm_content, debug};
+}
+
 let detectMob = () => {
     const toMatch = [
             /Android/i,
@@ -25,13 +37,21 @@ let detectMob = () => {
 let signup = (email) => {
     const SIGN_UP_URL_BASE = "https://scroll.com/firefoxauth";
     let url;
+    let {utm_campaign, utm_medium, utm_source, utm_content, debug} = getQueryParams();
+    let paramQueries = "";
+    if (utm_campaign) paramQueries += `&utm_campaign=${utm_campaign}`;
+    if (utm_medium) paramQueries += `&utm_medium=${utm_medium}`;
+    if (utm_source) paramQueries += `&utm_source=${utm_source}`;
+    if (utm_content) paramQueries += `&utm_content=${utm_content}`;
+
     if (email !== "") {
-        url = encodeURI(`${SIGN_UP_URL_BASE}?email=${email}`);
+        url = encodeURI(`${SIGN_UP_URL_BASE}?email=${email}${paramQueries}`);
     } else {
-        url = SIGN_UP_URL_BASE;
+        url = encodeURI(`${SIGN_UP_URL_BASE}?${paramQueries}`);
     }
 
     window.location.href = url;
+    console.log(url);
 }
 
 let setupSignupListeners = () => {
@@ -44,13 +64,24 @@ let setupSignupListeners = () => {
     document.querySelectorAll(".signup-btn").forEach((btn) => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
+
             let b = e.target;
             let email = document.getElementById(b.dataset.emailId).value;
+            let ctaId = b.dataset.ctaId;
             if (email && validateEmail(email)) {
                 signup(email);
             } else {
                 signup("")
             }
+            let {utm_campaign, utm_medium, utm_source, utm_content, debug} = getQueryParams();
+            gtag('event', 'click', {
+                event_category: 'CTA',
+                event_label: ctaId,
+                utm_campaign,
+                utm_medium,
+                utm_source,
+                utm_content,
+                debug})
         });
     });
 }
@@ -65,27 +96,22 @@ let disableTabIndexes = (questionElement) => {
     as.forEach(a => a.setAttribute("tabindex", "-1"));
 }
 
-let expandCollapseParent = (e) => {
-    let questionElm = e.target.parentNode.parentNode;
-    let isCollapsed = questionElm.classList.contains("collapsed");
-    if (isCollapsed) {
-        questionElm.classList.remove("collapsed");
-        questionElm.classList.add("expanded");
-        enableTabIndexes(questionElm);
-    } else {
-        questionElm.classList.remove("expanded");
-        questionElm.classList.add("collapsed");
-        disableTabIndexes(questionElm);
-    }
-}
-
-let expandCollapseQuestion = (elm) => {
+let expandCollapseQuestion = (elm, source) => {
     let questionElm = elm;
     let isCollapsed = questionElm.classList.contains("collapsed");
     if (isCollapsed) {
         questionElm.classList.remove("collapsed");
         questionElm.classList.add("expanded");
         enableTabIndexes(questionElm);
+        let {utm_campaign, utm_medium, utm_source, utm_content, debug} = getQueryParams();
+        gtag('event', 'question-click', {
+            event_category: 'faq-expansion',
+            event_label: elm.dataset.qId,
+            utm_campaign,
+            utm_medium,
+            utm_source,
+            utm_content,
+            debug})
     } else {
         questionElm.classList.remove("expanded");
         questionElm.classList.add("collapsed");
@@ -105,6 +131,15 @@ let setupAnchordLinks = () => {
                 questionElm.classList.remove("collapsed");
                 questionElm.classList.add("expanded");
             }
+            let {utm_campaign, utm_medium, utm_source, utm_content, debug} = getQueryParams();
+            gtag('event', 'anchor-click', {
+                event_category: 'faq-expansion',
+                event_label: anchorId,
+                utm_campaign,
+                utm_medium,
+                utm_source,
+                utm_content,
+                debug})
         });    
     });
 }
@@ -188,6 +223,18 @@ let setupMobileCarousel = () => {
     let btns = document.querySelectorAll(".mobile .pagination-btn");
     let logosSection = document.querySelector(".mobile .brand-logos");
 
+    function logCarouselMovement() {
+        let {utm_campaign, utm_medium, utm_source, utm_content, debug} = getQueryParams();
+        gtag('event', 'carousel', {
+            event_category: 'carousel-movement',
+            event_label: "",
+            utm_campaign,
+            utm_medium,
+            utm_source,
+            utm_content,
+            debug})
+    }
+
     function onSwipe(el, d) {
         if (d !== "r" && d != "l") return;
         let activePage;
@@ -222,6 +269,8 @@ let setupMobileCarousel = () => {
                 pages[i].classList.add("inactive");
             }
         }
+
+        logCarouselMovement();
     }
 
     detectswipe(logosSection, onSwipe);
@@ -245,14 +294,11 @@ let setupExpandButtons = () => {
         return mq(query);
     }
 
-    // if (!isTouchDevice()) {
-    //     document.querySelectorAll(".question-header button").forEach(button => button.addEventListener("click", expandCollapseParent));
-    // } else {
     document.querySelectorAll(".faq.question").forEach(elm => elm.addEventListener("click", (e) => {
-        if (e.currentTarget === elm && !(e.target instanceof HTMLAnchorElement))
-            expandCollapseQuestion(elm);
+        if (e.currentTarget === elm && !(e.target instanceof HTMLAnchorElement)){
+            expandCollapseQuestion(elm, "click");
+        }
     }));
-    // }
 }
 
 let setupTabIndexes = () => {
@@ -282,6 +328,7 @@ let checkforCustomElementSupport = () => {
 
 let activateNonregionModal = () => {
     if (window.localStorage && localStorage.getItem("modal-shown")  === "true") return; 
+    let mob = false;
 
     if (detectMob()) {
         // change the dialog to the mobile version
@@ -290,9 +337,20 @@ let activateNonregionModal = () => {
         deskP.classList.add("hidden");
         mobP.classList.remove("hidden");
         if (window.localStorage) localStorage.setItem("modal-shown", "true");
+        mob = true;
     }
+
+    let {utm_campaign, utm_medium, utm_source, utm_content, debug} = getQueryParams();
     
     document.querySelector('.overlay-container').classList.remove('hidden');
+    gtag('event', 'show', {
+        event_category: 'modal',
+        event_label: mob ? "mobile": "desktop",
+        utm_campaign,
+        utm_medium,
+        utm_source,
+        utm_content,
+        debug})
 }
 
 let checkRegion = () => {
@@ -338,15 +396,100 @@ let setupModalDismissBtns = () => {
     let crossBtn = document.getElementById("cross-dismiss");
     let overlay = document.querySelector(".overlay-container");
 
-    function hideOverlay() {
+    function hideOverlay(e, label) {
         overlay.classList.add("hidden");
+        let {utm_campaign, utm_medium, utm_source, utm_content, debug} = getQueryParams();
+
+        gtag('event', 'click', {
+            event_category: 'modal-dismiss',
+            event_label: label,
+            utm_campaign,
+            utm_medium,
+            utm_source,
+            utm_content,
+            debug})
     }
 
-    okBtn.addEventListener("click", hideOverlay);
-    crossBtn.addEventListener("click", hideOverlay);   
+    okBtn.addEventListener("click", (e) => hideOverlay(e, "ok"));
+    crossBtn.addEventListener("click", (e) => hideOverlay(e, "cross"));   
+}
+
+let setupAdditionalInstrumentation = () => {
+    let {utm_campaign, utm_medium, utm_source, utm_content, debug} = getQueryParams();
+
+    let scrollSetup = document.getElementById("scroll-setup-link");
+    scrollSetup.addEventListener("click", ()=> {
+        gtag('event', 'click', {
+            event_category: 'scroll-setup',
+            event_label: '',
+            utm_campaign,
+            utm_medium,
+            utm_source,
+            utm_content,
+            debug})
+    });
+
+    window.addEventListener("scroll", (e) => {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            // you're at the bottom of the page
+            gtag('event', 'scroll', {
+                event_category: 'full-scroll',
+                event_label: '',
+                utm_campaign,
+                utm_medium,
+                utm_source,
+                utm_content,
+                debug})
+        }
+    });
+
+    document.querySelector(".get-help-question").addEventListener("click", (e) => {
+        gtag('event', 'click', {
+            event_category: 'help-link',
+            event_label: 'top',
+            utm_campaign,
+            utm_medium,
+            utm_source,
+            utm_content,
+            debug})
+    });
+
+    document.getElementById("get-help-bottom").addEventListener("click", (e) => {
+        gtag('event', 'click', {
+            event_category: 'help-link',
+            event_label: 'bottom',
+            utm_campaign,
+            utm_medium,
+            utm_source,
+            utm_content,
+            debug})
+    });
+
+    document.querySelector(".fx-bento-button").addEventListener("click", (e) => {
+        gtag('event', 'click', {
+            event_category: 'bento-button',
+            event_label: '',
+            utm_campaign,
+            utm_medium,
+            utm_source,
+            utm_content,
+            debug})
+    });
+
+    document.querySelector(".download-fx").addEventListener("click", (e) => {
+        gtag('event', 'click', {
+            event_category: 'download-fx',
+            event_label: '',
+            utm_campaign,
+            utm_medium,
+            utm_source,
+            utm_content,
+            debug})
+    });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+    setupGA("fbw-march-v1");
     setupExpandButtons();
     setupAnchordLinks();
     setupMobileCarousel();
@@ -359,6 +502,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupPaginationBtns();
     setupModalDismissBtns();
     checkRegion();
+    setupAdditionalInstrumentation();
 });
 
 
