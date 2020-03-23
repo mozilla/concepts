@@ -327,9 +327,8 @@ let checkforCustomElementSupport = () => {
 }
 
 let activateNonregionModal = () => {
-    if (window.localStorage && localStorage.getItem("modal-shown")  === "true") return;
     let mob = false;
-    
+
     if (detectMob()) {
         mob = true;
     }
@@ -344,7 +343,7 @@ let activateNonregionModal = () => {
         utm_medium,
         utm_source,
         utm_content,
-        debug})
+        debug});
 }
 
 let checkRegion = () => {
