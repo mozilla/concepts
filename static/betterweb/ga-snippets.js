@@ -15,7 +15,6 @@ if (typeof window === 'object') {
   }
   
   function setupGA(metaCleanName) {
-    console.info("setting up ga");
     if (typeof window !== 'object') {
       return;
     }

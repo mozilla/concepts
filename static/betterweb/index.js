@@ -327,16 +327,10 @@ let checkforCustomElementSupport = () => {
 }
 
 let activateNonregionModal = () => {
-    if (window.localStorage && localStorage.getItem("modal-shown")  === "true") return; 
+    if (window.localStorage && localStorage.getItem("modal-shown")  === "true") return;
     let mob = false;
-
+    
     if (detectMob()) {
-        // change the dialog to the mobile version
-        let deskP = document.querySelector(".modal-content p.desktop");
-        let mobP = document.querySelector(".modal-content p.mobile");
-        deskP.classList.add("hidden");
-        mobP.classList.remove("hidden");
-        if (window.localStorage) localStorage.setItem("modal-shown", "true");
         mob = true;
     }
 
@@ -366,18 +360,11 @@ let checkRegion = () => {
     let nonregionParam = getQueryParams('nonregion', window.location.href);
     if (nonregionParam && nonregionParam == "false") return;
 
-    let isClearCache = getQueryParams('clearcache', window.location.href) == "true";
-
-    if (nonregionParam == "true" || detectMob()) activateNonregionModal();
-    if (window.localStorage && isClearCache) {
-        window.localStorage.clear();
-    }
-
     const url = "https://location.services.mozilla.com/v1/country?key=efdb6cac-b8d9-452e-bbbe-87481222b36a";
     function reqListener (e) {
         try {
             let response = e.target.response;
-            if (!(detectMob()) && response.country_code != "US"){
+            if (response.country_code != "US"){
                 activateNonregionModal();
             }
 
@@ -465,9 +452,9 @@ let setupAdditionalInstrumentation = () => {
             debug})
     });
 
-    document.querySelector(".fx-bento-button").addEventListener("click", (e) => {
+    document.querySelector(".download-fx").addEventListener("click", (e) => {
         gtag('event', 'click', {
-            event_category: 'bento-button',
+            event_category: 'download-fx',
             event_label: '',
             utm_campaign,
             utm_medium,
@@ -476,9 +463,9 @@ let setupAdditionalInstrumentation = () => {
             debug})
     });
 
-    document.querySelector(".download-fx").addEventListener("click", (e) => {
+    document.querySelector("firefox-apps").addEventListener("click", (e) => {
         gtag('event', 'click', {
-            event_category: 'download-fx',
+            event_category: 'bento-button',
             event_label: '',
             utm_campaign,
             utm_medium,
