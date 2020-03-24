@@ -1,0 +1,16 @@
+{
+    "addons": {
+      "{769cd7ad-ebf8-45c4-b1d6-05f05f0172c3}": {
+        "updates": [
+          {
+            "version": "1.0.0",
+            "update_link": "https://firstlook.firefox.com/betterweb/fbw-ext-1.0.0.xpi"
+          },
+          {
+            "version": "1.0.1",
+            "update_link": "https://firstlook.firefox.com/betterweb/fbw-ext-1.0.1.xpi"
+          }
+        ]
+      }
+    }
+  }
