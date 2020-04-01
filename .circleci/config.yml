@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Build the static site
           command: |
-            yarn && yarn run build
+            npm i && npm run build
       - persist_to_workspace:
           root: .
           paths:
