@@ -931,7 +931,7 @@ header {
         .header-wrapper .fcn-logo {
           height: 40px; } }
       .header-wrapper .fcn-logo a {
-        background: url("images/header-logo-lockup.png") no-repeat top left;
+        background: url("images/header-logo-lockup.svg") no-repeat top left;
         background-size: 286px;
         display: inline-block;
         height: 48px;
@@ -939,7 +939,7 @@ header {
         width: 286px; }
         @media (max-width: 675px) {
           .header-wrapper .fcn-logo a {
-            background: url("images/header-logo-small.png") no-repeat top left;
+            background: url("images/header-logo-small.svg") no-repeat top left;
             background-size: contain;
             height: 40px;
             width: 40px; }}
