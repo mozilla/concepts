@@ -53,6 +53,7 @@ jobs:
             fi
 
             ./.utils/deploy.sh
+            ./.utils/setup-object-redirection.sh
             ./.utils/invalidate-cloudfront-cache.sh
 
 workflows:
